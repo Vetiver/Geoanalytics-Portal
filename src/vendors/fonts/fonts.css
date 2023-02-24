@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "Nunito";
+  font-weight: 200;
+  src: url("./Nunito/ExtraLight/Nunito-ExtraLight.woff"), url("./Nunito/ExtraLight/Nunito-ExtraLight.woff2");
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-weight: 300;
+  src: url("./Nunito/Light/Nunito-Light.woff"), url("./Nunito/Light/Nunito-Light.woff2");
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-weight: 400;
+  src: url("./Nunito/Regular/Nunito-Regular.woff"), url("./Nunito/Regular/Nunito-Regular.woff2");
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-weight: 500;
+  src: url("./Nunito/Medium/Nunito-Medium.woff"), url("./Nunito/Medium/Nunito-Medium.woff2");
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-weight: 600;
+  src: url("./Nunito/SemiBold/Nunito-SemiBold.woff"), url("./Nunito/SemiBold/Nunito-SemiBold.woff2");
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-weight: 700;
+  src: url("./Nunito/Bold/Nunito-Bold.woff"), url("./Nunito/Bold/Nunito-Bold.woff2");
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-weight: 800;
+  src: url("./Nunito/ExtraBold/Nunito-ExtraBold.woff"), url("./Nunito/ExtraBold/Nunito-ExtraBold.woff2");
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-weight: 900;
+  src: url("./Nunito/Black/Nunito-Black.woff"), url("./Nunito/Black/Nunito-Black.woff2");
+}
