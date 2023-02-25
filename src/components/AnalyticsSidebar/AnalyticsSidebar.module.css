@@ -1,0 +1,83 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 358px;
+    background: radial-gradient(67.53% 67.53% at 10.47% 30.01%, #073A5B 25.35%, #001F33 100%)
+}
+
+.sideContainer {
+    width: 330px;
+}
+
+.sideName {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 27px;
+
+    color: #F5F5F5;
+    margin-top: 14.5px;
+}
+
+.dataimg {
+    margin-top: 8px;
+
+}
+
+.infoContainer {
+    display: flex;
+    gap: 15px;
+    padding-left: 13px;
+}
+
+.checkboxContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin-left: 59px;
+    margin-top: 35px;
+}
+
+.checkboxName {
+    margin: 0;
+    padding: 0;
+    padding-left: 20px;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 27px;
+
+    /* White */
+
+    color: #FFFFFF;
+}
+
+.hideButton {
+    width: 100%;
+    height: 20px;
+    border: none;
+    background: #21648A;
+/* 1 */
+
+box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07), 0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198), 0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035), 0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
+position: relative;
+}
+
+.imgButton {
+    position: absolute;
+    top: 23%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: rotate(-2010deg);
+}
+
