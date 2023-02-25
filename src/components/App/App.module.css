@@ -1,6 +1,6 @@
 .page {
   margin: 0 auto;
-  font-family: "Nunito", Arial, Helvetica, sans-serif;
+  font-family: Nunito, Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
@@ -14,6 +14,7 @@
   justify-content: space-between;
   width: 100%;
   background: #fff;
+  background: #073A5B;
 }
 .main {
   position: relative;
