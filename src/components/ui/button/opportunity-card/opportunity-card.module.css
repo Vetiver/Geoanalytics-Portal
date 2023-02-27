@@ -1,0 +1,21 @@
+.card {
+  max-width: 300px;
+}
+
+.image {
+  max-width: 300px;
+  width: 200px;
+  height: 200px;
+  font-family: "Nunito";
+  color: #f5f5f5;
+}
+
+.title {
+  margin: 40px 0 16px;
+  font: 700 24px/33px "Nunito";
+}
+
+.content {
+  margin: 0;
+  font: 400 18px/25px "Nunito";
+}

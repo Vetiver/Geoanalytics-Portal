@@ -1,0 +1,45 @@
+.mainPage {
+  width: 100%;
+  color: #f5f5f5;
+  background: radial-gradient(
+    67.53% 67.53% at 10.47% 30.01%,
+    #073a5b 25.35%,
+    #001f33 100%
+  );
+}
+
+.main {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.introduction {
+}
+
+.blockWithLink {
+  max-width: 505px;
+  margin-top: 280px;
+  margin-bottom: 126px;
+  margin-left: 240px;
+}
+
+.heading {
+  font: 700 48px/65px "Nunito";
+}
+
+.caption {
+  font: 400 24px/33px "Nunito";
+}
+
+.keyOpportunitiesTitle {
+  margin-bottom: 60px;
+  padding: 0;
+  text-align: center;
+}
+
+.cardsContainer {
+  padding: 50px 70px;
+  display: flex;
+  gap: 200px;
+  justify-content: space-between;
+}

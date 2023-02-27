@@ -1,0 +1,38 @@
+.header {
+  width: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(1, 35, 56, 0) 8.99%,
+    rgba(1, 35, 56, 0.9) 46.44%
+  );
+  display: flex;
+  justify-content: center;
+}
+
+.headerContainer {
+  width: 100%;
+  max-width: 1440px;
+  padding: 25px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 315px;
+  height: 75.5px;
+}
+
+.navBar {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font: 700 18px/25px Nunito;
+}
+
+.navLink {
+  width: 172px;
+  text-align: center;
+  list-style: none;
+  cursor: pointer;
+}

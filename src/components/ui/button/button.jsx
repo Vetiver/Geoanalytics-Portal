@@ -5,12 +5,10 @@ import arrowLeft from "../../../images/logos/arrow-left.svg";
 import gradientArrowRight from "../../../images/logos/gradient-right-arrow.svg";
 
 // type = "default" - кнопка с градиентом | "transparent" - прозрачная кнопка
-
 // direction = "right" - стрелка вправо | "left" - стрелка влево
 
 function Button({ content, type = "default", direction = "right" }) {
   const [isClick, setIsClick] = useState(false);
-  console.log(isClick);
 
   const handleOnMouseDown = () => {
     setIsClick(true);
@@ -31,7 +29,7 @@ function Button({ content, type = "default", direction = "right" }) {
           <>
             <p className={styles.content}>{content}</p>
 
-            {isClick ? (
+            {isClick && type === "default" ? (
               <img
                 className={styles.arrow}
                 src={gradientArrowRight}

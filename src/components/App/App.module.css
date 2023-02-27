@@ -13,7 +13,6 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  background: #fff;
   background: #073A5B;
 }
 .main {
@@ -23,7 +22,6 @@
   min-height: calc(100vh - 177px);
   width: 100%;
   max-width: 1440px;
-  background: #fff;
 }
 a {
   text-decoration: none;
