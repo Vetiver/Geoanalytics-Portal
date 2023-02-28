@@ -2,7 +2,7 @@ import { FC } from "react";
 import styles from "./App.module.css";
 import GeodeticApplicationPage from "../../pages/GeodeticApplicationPage/GeodeticApplicationPage";
 
-const App: FC = () => {
+const App = () => {
   return <GeodeticApplicationPage />;
 };
 
