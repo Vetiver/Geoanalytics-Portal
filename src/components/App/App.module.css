@@ -7,13 +7,13 @@
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
-  background: #fff;
+  background: url(../../images/background.jpg) no-repeat;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  background: #073A5B;
 }
 .main {
   position: relative;
@@ -25,9 +25,11 @@
 }
 a {
   text-decoration: none;
+  color: inherit;
 }
 @media screen and (max-width: 500px) {
   .main {
     min-height: calc(100vh - 145px);
   }
 }
+

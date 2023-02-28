@@ -1,8 +1,6 @@
 import { useState } from "react";
 import styles from "./button.module.css";
-import arrowRight from "../../../images/logos/arrow-right.svg";
-import arrowLeft from "../../../images/logos/arrow-left.svg";
-import gradientArrowRight from "../../../images/logos/gradient-right-arrow.svg";
+import { arrowLeft, arrowRight, gradientArrowRight } from "../../../images/logos/logos";
 
 // type = "default" - кнопка с градиентом | "transparent" - прозрачная кнопка
 // direction = "right" - стрелка вправо | "left" - стрелка влево

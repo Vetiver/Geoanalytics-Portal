@@ -1,0 +1,96 @@
+.footer {
+  color: #fff;
+}
+
+.footerContainer {
+  padding-top: 340px;
+  padding-bottom: 140px;
+  padding-right: 360px;
+  width: fit-content;
+  margin-left: auto;
+}
+
+.title {
+  margin: 0;
+  font: 700 36px/49px "Nunito";
+  color: #f5f5f5;
+}
+
+.contactsContainerBorder {
+  padding: 1px;
+  width: fit-content;
+  height: calc(100% + 2px);
+  background: linear-gradient(46.85deg, #3470fa 14.82%, #50eafd 84.65%);
+  box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07),
+    0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198),
+    0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275),
+    0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035),
+    0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725),
+    0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
+  box-sizing: border-box;
+  border-radius: 16px;
+  position: relative;
+}
+
+.contactsContainer {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  gap: 35px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 16px;
+  position: relative;
+  box-sizing: border-box;
+  padding: 50px 43px;
+  max-width: 588px;
+}
+
+.contactsContainerBorder:before {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  background: #073a5b;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  border-radius: 16px;
+  z-index: 0;
+}
+
+.contactsList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.contactImg {
+  width: 48px;
+  height: 48px;
+}
+
+.contact {
+  color: inherit;
+  font: 700 24px/33px "Nunito";
+}
+
+.line {
+  position: absolute;
+  bottom: -30px;
+  right: -37px;
+}
+
+.copyright {
+  margin-top: 200px;
+  margin-bottom: 0;
+  text-align: center;
+  font: 300 18px/25px "Nunito";
+}

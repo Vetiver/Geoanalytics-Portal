@@ -6,18 +6,18 @@ import {
 
 export const keyOpportunityCards = [
   {
-    image: aiImage,
+    image: chartImage,
     title: "Advanced analytics",
     caption:
       "Глубокая аналитика на основе открытых и коммерческих источников информации",
   },
   {
-    image: chartImage,
+    image: globeImage,
     title: "GeoAlerting",
     caption: `Система оповещения о\xa0выявленных изменениях`,
   },
   {
-    image: globeImage,
+    image: aiImage,
     title: "Advanced analytics",
     caption:
       "Глубокая аналитика на основе открытых и коммерческих источников информации",

@@ -1,9 +1,14 @@
 import Header from "../../header/header";
 import styles from "./main-page.module.css";
-import earth from "../../../images/planet.svg";
 import Button from "../../ui/button/button";
 import OpportunityCard from "../../ui/button/opportunity-card/opportunity-card";
 import { keyOpportunityCards } from "../../../constants/key-opportunity-cards";
+import Footer from "../../App/footer/footer";
+import {
+  cornerLineLeft,
+  straightLine,
+  cornerLineRight,
+} from "../../../images/decoration-lines/decoration-lines";
 
 function MainPage() {
   return (
@@ -22,7 +27,9 @@ function MainPage() {
         </section>
         <section className={styles.keyOpportunities}>
           <div className={styles.keyOpportunitiesContainer}>
-            <h2 className={styles.keyOpportunitiesTitle}>Ключевые возможности</h2>
+            <h2 className={styles.keyOpportunitiesTitle}>
+              Ключевые возможности
+            </h2>
             <div className={styles.cardsContainer}>
               {keyOpportunityCards.map((card) => {
                 return (
@@ -34,11 +41,26 @@ function MainPage() {
                   />
                 );
               })}
+              <img
+                className={`${styles.line} ${styles.cornerLineLeft}`}
+                src={cornerLineLeft}
+                alt="Декоративный элемент"
+              />
+              <img
+                className={`${styles.line} ${styles.straightLine}`}
+                src={straightLine}
+                alt="Декоративный элемент"
+              />
+              <img
+                className={`${styles.line} ${styles.cornerLineRight}`}
+                src={cornerLineRight}
+                alt="Декоративный элемент"
+              />
             </div>
           </div>
         </section>
       </main>
-
+      <Footer />
       {/* <img className="earth" src={earth} alt="планета Земля" /> */}
     </div>
   );

@@ -1,5 +1,5 @@
-import aiImage from "./ai.svg";
-import chartImage from "./chart.svg";
-import globeImage from "./globe.svg";
+import aiImage from "./ai.png";
+import chartImage from "./chart.png";
+import globeImage from "./globe.png";
 
 export { aiImage, chartImage, globeImage };

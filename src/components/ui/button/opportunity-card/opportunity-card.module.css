@@ -1,5 +1,7 @@
 .card {
   max-width: 300px;
+  margin-top: 5px;
+  margin-left: 5px;
 }
 
 .image {
@@ -11,7 +13,7 @@
 }
 
 .title {
-  margin: 40px 0 16px;
+  margin: 35px 0 16px;
   font: 700 24px/33px "Nunito";
 }
 
