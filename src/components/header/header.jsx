@@ -1,18 +1,23 @@
 import styles from "./header.module.css";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 import appLogo from "../../images/logos/main-logo.svg";
 
 function Header() {
+
   return (
     <header className={styles.header}>
       <div className={styles.headerContainer}>
         <img className={styles.logo} src={appLogo} alt="логотип" />
         <ul className={styles.navBar}>
-          <a href="#." className={styles.navLink}>
+          <AnchorLink href="#." className={styles.navLink}>
             Аналитика (демо)
-          </a>
-          <a href="#." className={styles.navLink}>
+          </AnchorLink>
+          <AnchorLink
+            href="#contactsId"
+            className={styles.navLink}
+          >
             Контакты
-          </a>
+          </AnchorLink>
         </ul>
       </div>
     </header>
