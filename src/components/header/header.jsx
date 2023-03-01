@@ -7,12 +7,12 @@ function Header() {
       <div className={styles.headerContainer}>
         <img className={styles.logo} src={appLogo} alt="логотип" />
         <ul className={styles.navBar}>
-          <li href="#." className={styles.navLink}>
+          <a href="#." className={styles.navLink}>
             Аналитика (демо)
-          </li>
-          <li href="#." className={styles.navLink}>
+          </a>
+          <a href="#." className={styles.navLink}>
             Контакты
-          </li>
+          </a>
         </ul>
       </div>
     </header>

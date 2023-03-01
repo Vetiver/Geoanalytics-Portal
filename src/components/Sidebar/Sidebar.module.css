@@ -1,94 +1,124 @@
 .sidebar {
-    display: flex;
-    position: absolute;
-    top: 120px;
-    width: 18%;
-    height: 100%;
-    background: radial-gradient(67.53% 67.53% at 10.47% 30.01%, #073A5B 25.35%, #001F33 100%);
-    transition: 0.5s;
-
+  display: flex;
+  position: absolute;
+  top: 120px;
+  width: 18%;
+  height: 100%;
+  background: radial-gradient(
+    67.53% 67.53% at 10.47% 30.01%,
+    #073a5b 25.35%,
+    #001f33 100%
+  );
+  transition: 0.5s;
 }
 
 .sideContainer {
-    width: 330px;
+  width: 330px;
 }
 
 .sideName {
-    margin: 0;
-    padding: 0;
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 27px;
-    color: #F5F5F5;
-    margin-top: 14.5px;
-}
-
-.dataimg {
-    margin-top: 8px;
-
+  margin: 0;
+  padding: 0;
+  font: 500 20px/27px "Nunito";
+  color: #f5f5f5;
 }
 
 .infoContainer {
-    display: flex;
-    gap: 15px;
-    padding-left: 13px;
+  margin-top: 9px;
+  margin-bottom: 9px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
 }
 
 .checkboxContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    margin-left: 59px;
-    margin-top: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 26px;
+  margin-left: 59px;
 }
 
-.checkboxName {
-    margin: 0;
-    padding: 0;
-    padding-left: 20px;
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 27px;
+.label {
+  margin-bottom: 0;
+  display: block;
+  position: relative;
+  padding-left: 40px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  box-sizing: border-box;
+  font: 500 20px/27px "Nunito";
+  color: #fff;
+}
 
-    /* White */
+.label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
 
-    color: #FFFFFF;
+.checkmark {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: url(../../images/checkbox/checkbox-unchecked.svg);
+  background-size: contain;
+  transition: background 0.2s;
+}
+
+.label input:checked ~ .checkmark {
+  background-color: #2196f3;
+  border-radius: 100%;
+}
+
+.label input:checked ~ .checkmark {
+  background: url(../../images/checkbox/checkbox-checked.svg);
+  background-size: contain;
+  transition: background 0.5s;
 }
 
 .hideButton {
-    width: 20px;
-    margin-left: auto;
-    border: none;
-    background: #21648A;
-/* 1 */
-
-box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07), 0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198), 0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035), 0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
-position: relative;
+  width: 20px;
+  margin-left: auto;
+  border: none;
+  background: #21648a;
+  box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07),
+    0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198),
+    0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275),
+    0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035),
+    0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725),
+    0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
+  position: relative;
 }
 
 .imgButton {
-    position: absolute;
-    top: 50%;
-    left:50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .close {
-    display: flex;
-    position: absolute;
-    top: 120px;
-    width: 17%;
-    height: 1000px;
-    background: radial-gradient(67.53% 67.53% at 10.47% 30.01%, #073A5B 25.35%, #001F33 100%);
-    transition: 0.5s;
-    transform: translateX(-100%);
+  display: flex;
+  position: absolute;
+  top: 120px;
+  width: 17%;
+  height: 1000px;
+  background: radial-gradient(
+    67.53% 67.53% at 10.47% 30.01%,
+    #073a5b 25.35%,
+    #001f33 100%
+  );
+  transition: 0.5s;
+  transform: translateX(-100%);
 }
