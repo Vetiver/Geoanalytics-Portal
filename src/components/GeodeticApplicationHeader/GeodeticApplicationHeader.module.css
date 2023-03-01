@@ -1,75 +1,55 @@
 .header {
-    max-width: 1920px;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    padding-top: 25px;
-    align-items: center;
-    padding-left: 40px;
-    padding-right: 40px;
+  padding: 25px 40px 0 40px;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
 }
 
 .header > div:last-child {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 .image {
-    width: 240px;
-    height: 57.55px;
-    margin-top: auto;
-    margin-bottom: auto;
+  width: 240px;
+  height: 57.55px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .demo::before {
-    margin-top: -12.27px;
-    content: " ";
-    background: linear-gradient(46.85deg, #3470FA 14.82%, #50EAFD 84.65%);
-    width: 4px;
-    height: 50px;
-    float: left;
-    margin-right: 68px;
-
+  margin-top: -12.27px;
+  content: "";
+  background: linear-gradient(16.85deg, #3470fa 0.82%, #50eafd 0%);
+  border-radius: 5px;
+  width: 4px;
+  height: 50px;
+  float: left;
+  margin-right: 68px;
 }
 
 .demo {
-    padding-top: 12.27px;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: 68px;
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 33px;
-    /* identical to box height */
-
-
-    /* White */
-
-    color: #FFFFFF;
-
+  padding-top: 12.27px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 68px;
+  font: 700 24px/33px "Nunito";
+  color: #fff;
 }
 
 .link {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    
+  display: flex;
+  align-items: center;
+  margin-left: auto;
 }
 
 .back {
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 27px;
-
-    color: #F5F5F5;
-    padding-top: 10px;
+  font: 500 20px/27px "Nunito";
+  color: #f5f5f5;
 }
 
 .arrowLeft {
-    width: 44px;
-    height: 44px;
-    padding-top: 8px;
+  width: 44px;
+  height: 44px;
 }

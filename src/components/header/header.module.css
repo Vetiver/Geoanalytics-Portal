@@ -35,4 +35,27 @@
   text-align: center;
   list-style: none;
   cursor: pointer;
+  transition: padding 0.5s;
+  position: relative;
+}
+
+.navLink:after {
+  position: absolute;
+  bottom: -10px;
+  left: 34%;
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: #fff;
+  opacity: 0;
+  /* transition: display 0.5s; */
+}
+
+.navLink:hover {
+  padding-bottom: 10px;
+}
+
+.navLink:hover .navLink:after{
+  opacity: 1;
+  /* transition: display 0.5s; */
 }
