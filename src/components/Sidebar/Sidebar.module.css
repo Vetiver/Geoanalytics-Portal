@@ -2,9 +2,11 @@
     display: flex;
     position: absolute;
     top: 120px;
-    width: 350px;
-    height: 1000px;
-    background: radial-gradient(67.53% 67.53% at 10.47% 30.01%, #073A5B 25.35%, #001F33 100%)
+    width: 18%;
+    height: 100%;
+    background: radial-gradient(67.53% 67.53% at 10.47% 30.01%, #073A5B 25.35%, #001F33 100%);
+    transition: 0.5s;
+
 }
 
 .sideContainer {
@@ -62,6 +64,7 @@
 
 .hideButton {
     width: 20px;
+    margin-left: auto;
     border: none;
     background: #21648A;
 /* 1 */
@@ -79,3 +82,13 @@ position: relative;
     transform: translate(-50%, -50%);
 }
 
+.close {
+    display: flex;
+    position: absolute;
+    top: 120px;
+    width: 17%;
+    height: 1000px;
+    background: radial-gradient(67.53% 67.53% at 10.47% 30.01%, #073A5B 25.35%, #001F33 100%);
+    transition: 0.5s;
+    transform: translateX(-100%);
+}

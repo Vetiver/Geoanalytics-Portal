@@ -9,6 +9,7 @@ import {
   straightLine,
   cornerLineRight,
 } from "../../../images/decoration-lines/decoration-lines";
+import { Link } from "react-router-dom";
 
 function MainPage() {
   return (
@@ -22,7 +23,9 @@ function MainPage() {
               Платформа для эффективного управления территорией на основе
               искусственного интеллекта
             </p>
-            <Button content="Демо-доступ" />
+            <Link to='/application'>
+              <Button content="Демо-доступ" />
+            </Link>
           </div>
         </section>
         <section className={styles.keyOpportunities}>

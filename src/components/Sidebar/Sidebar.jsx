@@ -1,11 +1,16 @@
-import React from "react";
+import React,{ useState } from "react";
 import styles from "./Sidebar.module.css";
 import data from "../../images/logos/data.svg";
 import buttonArrow from "../../images/logos/buttonArrow.svg";
 
 function Sidebar() {
+  const [selected, setSelected] = useState(true);
+  const toggle = () => {
+    setSelected(!selected);
+    console.log(selected);
+  };
   return (
-    <aside className={styles.sidebar}>
+    <aside className={ selected === true ? `${styles.sidebar}` : `${styles.close}`}>
       <div className={styles.sideContainer}>
         <div className={styles.infoContainer}>
           <img className={styles.dataimg} src={data} alt="Logo" />
@@ -26,7 +31,7 @@ function Sidebar() {
           </li>
         </ul>
       </div>
-      <button className={styles.hideButton}>
+      <button onClick={toggle} className={styles.hideButton}>
         <img className={styles.imgButton} src={buttonArrow} alt="arrow" />
       </button>
     </aside>
