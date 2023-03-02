@@ -91,8 +91,8 @@
     #073a5b 25.35%,
     #001f33 100%
   );
-  transition: 0.5s;
-  transform: translateY(+100%);
+  transition: 0.2s;
+  transform: translateY(+200%);
 }
 
 .infoContainerClose {

@@ -19,28 +19,28 @@ function Sidebar() {
           <p className={styles.sideName}>Управление данными</p>
         </div>
         <div className={styles.checkboxContainer}>
-          <label class={styles.label}>
+          <label className={styles.label}>
             One
             <input type="checkbox" />
-            <span class={styles.checkmark}></span>
+            <span className={styles.checkmark}></span>
           </label>
 
-          <label class={styles.label}>
+          <label className={styles.label}>
             Two
             <input type="checkbox" />
-            <span class={styles.checkmark}></span>
+            <span className={styles.checkmark}></span>
           </label>
 
-          <label class={styles.label}>
+          <label className={styles.label}>
             Three
             <input type="checkbox" />
-            <span class={styles.checkmark}></span>
+            <span className={styles.checkmark}></span>
           </label>
 
-          <label class={styles.label}>
+          <label className={styles.label}>
             Four
             <input type="checkbox" />
-            <span class={styles.checkmark}></span>
+            <span className={styles.checkmark}></span>
           </label>
         </div>
       </div>
