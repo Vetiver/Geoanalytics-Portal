@@ -10,7 +10,6 @@ function AnalyticsSidebar() {
   const [selected, setSelected] = useState(true);
   const toggle = () => {
     setSelected(!selected);
-    console.log(selected);
   };
   return (
     <aside
