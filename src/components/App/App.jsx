@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAnalitic } from "../../services/actions/analitic";
 
 
+
 const App = () => {
   const dispatch = useDispatch();
   const analitic = useSelector((state) => state.analiticReduser.allAnalitic);

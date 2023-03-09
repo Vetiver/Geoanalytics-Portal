@@ -20,25 +20,19 @@ function Sidebar() {
         </div>
         <div className={styles.checkboxContainer}>
           <label className={styles.label}>
-            One
+          agro
             <input type="checkbox" />
             <span className={styles.checkmark}></span>
           </label>
 
           <label className={styles.label}>
-            Two
+          forest
             <input type="checkbox" />
             <span className={styles.checkmark}></span>
           </label>
 
           <label className={styles.label}>
-            Three
-            <input type="checkbox" />
-            <span className={styles.checkmark}></span>
-          </label>
-
-          <label className={styles.label}>
-            Four
+          boundaries
             <input type="checkbox" />
             <span className={styles.checkmark}></span>
           </label>

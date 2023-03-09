@@ -1,0 +1,38 @@
+.terrainContainer {
+    margin-top: 37px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.header {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33px;
+    /* identical to box height */
+
+
+    /* White */
+
+    color: #FFFFFF;
+}
+
+.text {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    /* identical to box height */
+
+
+    /* White */
+
+    color: #FFFFFF;
+}
