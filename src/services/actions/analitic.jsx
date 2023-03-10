@@ -4,7 +4,7 @@ export const GET_ANALITIC_SUCCESS = "GET_ANALITIC_SUCCESS";
 export const GET_ANALITIC_FAILED = "GET_ANALITIC_FAILED";
 
 export const infoUserData = () => {
-    return fetch(`apps/demo-application`, {
+    return fetch(`/apps/demo-application`, {
       method: "GET",
       mode: "cors",
       cache: "no-cache",
