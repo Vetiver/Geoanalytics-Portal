@@ -12,7 +12,7 @@ import { Bar } from 'react-chartjs-2';
 import styles from "./VerticalChart.module.css";
 import faker from 'faker';
 
-function VerticalChart() {
+function VerticalChart({close}) {
     ChartJS.register(
         CategoryScale,
         LinearScale,
@@ -43,7 +43,7 @@ function VerticalChart() {
         ],
       };
     return (
-        <div className={styles.chart}>
+        <div className={close === true ? `${styles.chart}` : `${styles.close}`}>
           <h4 className={styles.header}>Столбчатая диаграмма</h4>
             <Bar options={options} data={data} />
         </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
 import styles from "./PieChart.module.css";
-function PieChart() {
+function PieChart({close}) {
     ChartJS.register(ArcElement, Tooltip, Legend);
 
  const data = {
@@ -31,8 +31,8 @@ function PieChart() {
   ],
 };
     return (
-        <div className={styles.pie}>
-           <h4 className={styles.header}>Столбчатая диаграмма</h4>
+        <div className={close === true ? `${styles.pie}` : `${styles.close}`}>
+           <h4 className={styles.header}>Круговая диаграмма</h4>
             <Pie data={data} />
         </div>
     );

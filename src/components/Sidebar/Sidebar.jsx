@@ -10,6 +10,7 @@ function Sidebar() {
     console.log(selected);
   };
   return (
+    selected ? 
     <aside
       className={selected === true ? `${styles.sidebar}` : `${styles.close}`}
     >
@@ -42,6 +43,11 @@ function Sidebar() {
         <img className={styles.imgButton} src={buttonArrow} alt="arrow" />
       </button>
     </aside>
+    :
+    <button onClick={toggle} className={styles.openButton}>
+      <img className={styles.dataImg} src={data} alt="Logo" />
+      <img className={styles.openArrow} src={buttonArrow} alt="arrow" />
+    </button>
   );
 }
 

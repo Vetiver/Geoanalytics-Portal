@@ -12,7 +12,8 @@ function AnalyticsSidebar() {
     setSelected(!selected);
   };
   return (
-    <aside
+    selected ? 
+      <aside
       className={selected === true ? `${styles.sidebar}` : `${styles.close}`}
     >
       <button
@@ -37,12 +38,18 @@ function AnalyticsSidebar() {
           <p className={styles.sideName}>Аналитическая панель</p>
         </div>
         <div className={styles.analiticsContainer}>
-          <Terrain/>
-          <PieChart/>
-          <VerticalChart/>
+          <Terrain close={selected}/>
+          <PieChart close={selected}/>
+          <VerticalChart close={selected}/>
         </div>
       </div>
     </aside>
+     : <button className={styles.openButton} onClick={toggle}>
+      <img className={styles.dataimg} src={analitLogo} alt="Logo" />
+      <p className={styles.sideName}>Аналитическая панель</p>
+      <img className={styles.openArrow} src={buttonArrow} alt="arrow" />
+      </button>
+    
   );
 }
 

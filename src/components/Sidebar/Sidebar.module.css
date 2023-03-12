@@ -2,7 +2,7 @@
   display: flex;
   position: absolute;
   width: 18%;
-  height: 100%;
+  height: 88%;
   background: radial-gradient(
     67.53% 67.53% at 10.47% 30.01%,
     #073a5b 25.35%,
@@ -121,4 +121,23 @@
   );
   transition: 0.5s;
   transform: translateX(-100%);
+}
+
+.openButton {
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  left: 0;
+  width: 67px;
+  height: 60px;
+  background: #053C5B;
+  z-index: 10;
+}
+
+.openArrow {
+  transform: rotate(59deg);
 }

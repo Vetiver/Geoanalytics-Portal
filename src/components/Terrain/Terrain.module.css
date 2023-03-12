@@ -36,3 +36,28 @@
 
     color: #FFFFFF;
 }
+
+.firstText {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 16px;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    /* identical to box height */
+
+
+    /* White */
+
+    color: #FFFFFF;
+}
+
+.close {
+    display: none;
+}
+
+.firsColumn {
+    border-bottom:  1px solid #FFFFFF;
+}
