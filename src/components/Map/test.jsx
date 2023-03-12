@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./test.css";
 import Map from "./map";
 import Layers from "../Layers/layers";
@@ -12,12 +12,6 @@ import MapControls from "../MapControls/map-controls";
 // import FullScreenControl from "../MapControls/FullScreenControl/full-screen-control";
 import mapConfig from "../utils/map-config.json";
 import ZoomInOutControls from "../MapControls/ZoomInOutControls/zoom-in-out-controls";
-import ZoomToExtentControl from "../MapControls/ZoomToExtentControl/zoom-to-extent-control";
-// import GeolocationControl from "../MapControls/GeolocationControl/geolocation-control";
-import Geolocation from "ol/Geolocation";
-import View from "ol/View";
-import { Projection } from "ol/proj";
-import GeolocationTest from "../test-geolocation";
 import GeolocationControl from "../MapControls/GeolocationControl/geolocation-control";
 
 let styles = {
