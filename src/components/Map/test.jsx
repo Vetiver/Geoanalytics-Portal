@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import './test.css'
+import { useState } from "react";
+import "./test.css";
 import Map from "./map";
 import Layers from "../Layers/layers";
 import TileLayer from "../Layers/TileLayer/tile-layer";
@@ -9,8 +9,10 @@ import { osm, vector } from "../Source";
 import { fromLonLat, get } from "ol/proj";
 import GeoJSON from "ol/format/GeoJSON";
 import MapControls from "../MapControls/map-controls";
-import FullScreenControl from "../MapControls/FullScreenControl/full-screen-control";
+// import FullScreenControl from "../MapControls/FullScreenControl/full-screen-control";
 import mapConfig from "../utils/map-config.json";
+import ZoomInOutControls from "../MapControls/ZoomInOutControls/zoom-in-out-controls";
+import GeolocationControl from "../MapControls/GeolocationControl/geolocation-control";
 
 let styles = {
   MultiPolygon: new Style({
@@ -31,6 +33,20 @@ const Test = () => {
   const [zoom, setZoom] = useState(9);
   const [showLayer1, setShowLayer1] = useState(true);
   const [showLayer2, setShowLayer2] = useState(true);
+
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+      console.log("Geolocation is not supported by this browser.");
+    }
+  }
+
+  function showPosition(position) {
+    setCenter([position.coords.longitude, position.coords.latitude]);
+    setZoom(14);
+  }
+
   return (
     <div className="test">
       <Map center={fromLonLat(center)} zoom={zoom}>
@@ -58,10 +74,11 @@ const Test = () => {
           )}
         </Layers>
         <MapControls>
-          <FullScreenControl />
+          <ZoomInOutControls />
+          <GeolocationControl onClick={getLocation} />
         </MapControls>
       </Map>
-      <div className='testCity'>
+      <div className="testCity">
         <input
           type="checkbox"
           checked={showLayer1}
@@ -69,7 +86,7 @@ const Test = () => {
         />{" "}
         Johnson County
       </div>
-      <div className='testCity'>
+      <div className="testCity">
         <input
           type="checkbox"
           checked={showLayer2}
