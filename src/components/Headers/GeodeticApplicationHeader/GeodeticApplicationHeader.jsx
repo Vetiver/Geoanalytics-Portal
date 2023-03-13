@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./GeodeticApplicationHeader.module.css";
-import logo from "../../images/logos/logo.svg";
-import arrowLeft from "../../images/logos/arrow-left.svg";
+import logo from "../../../images/logos/logo.svg";
+import arrowLeft from "../../../images/logos/arrow-left.svg";
 import { Link } from "react-router-dom";
 
-function GeodeticApplicationHeder() {
+function GeodeticApplicationHeader() {
   return (
     <header className={styles.header}>
       <img className={styles.image} src={logo} alt="Logo" />
@@ -17,4 +17,4 @@ function GeodeticApplicationHeder() {
   );
 }
 
-export default GeodeticApplicationHeder;
+export default GeodeticApplicationHeader;

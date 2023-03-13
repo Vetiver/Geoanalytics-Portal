@@ -1,6 +1,10 @@
 import { useState } from "react";
 import styles from "./button.module.css";
-import { arrowLeft, arrowRight, gradientArrowRight } from "../../../images/logos/logos";
+import {
+  arrowLeft,
+  arrowRight,
+  gradientArrowRight,
+} from "../../../images/logos/logos";
 
 // type = "default" - кнопка с градиентом | "transparent" - прозрачная кнопка
 // direction = "right" - стрелка вправо | "left" - стрелка влево
@@ -19,7 +23,7 @@ function Button({ content, type = "default", direction = "right" }) {
   return (
     <button
       className={`${styles.button} ${styles[type]}`}
-      onMouseUp={handleOnMouseUp}
+      onMouseLeave={handleOnMouseUp}
       onMouseDown={handleOnMouseDown}
     >
       <div className={styles.contentContainer}>

@@ -1,9 +1,9 @@
-import Header from "../../header/header";
+import MainPageHeader from "../../Headers/MainPageHeader/main-page-header";
 import styles from "./main-page.module.css";
 import Button from "../../ui/button/button";
 import OpportunityCard from "../../ui/button/opportunity-card/opportunity-card";
 import { keyOpportunityCards } from "../../../constants/key-opportunity-cards";
-import Footer from "../../App/footer/footer";
+import Footer from "../../footer/footer";
 import {
   cornerLineLeft,
   straightLine,
@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 function MainPage() {
   return (
     <div className={styles.mainPage}>
-      <Header />
+      <MainPageHeader />
       <main className={styles.main}>
         <section className={styles.introduction}>
           <div className={styles.blockWithLink}>
@@ -23,7 +23,7 @@ function MainPage() {
               Платформа для эффективного управления территорией на основе
               искусственного интеллекта
             </p>
-            <Link to='/application'>
+            <Link to="/application">
               <Button content="Демо-доступ" />
             </Link>
           </div>
@@ -64,7 +64,6 @@ function MainPage() {
         </section>
       </main>
       <Footer />
-      {/* <img className="earth" src={earth} alt="планета Земля" /> */}
     </div>
   );
 }
