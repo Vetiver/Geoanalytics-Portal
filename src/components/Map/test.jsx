@@ -13,6 +13,9 @@ import MapControls from "../MapControls/map-controls";
 import mapConfig from "../utils/map-config.json";
 import ZoomInOutControls from "../MapControls/ZoomInOutControls/zoom-in-out-controls";
 import GeolocationControl from "../MapControls/GeolocationControl/geolocation-control";
+import CustomControl from "../ui/button/CustomController/custom-controller";
+import { ControlStates, ControlTypes } from "../../constants/controls";
+import { setDelayForAnimation } from "../utils/functions";
 
 let styles = {
   MultiPolygon: new Style({
@@ -29,22 +32,26 @@ const geojsonObject = mapConfig.geojsonObject;
 const geojsonObject2 = mapConfig.geojsonObject2;
 
 const Test = () => {
-  const [center, setCenter] = useState([-94.9065, 38.9884]);
+  const [center, setCenter] = useState([37.6173, 55.7558]);
   const [zoom, setZoom] = useState(9);
   const [showLayer1, setShowLayer1] = useState(true);
   const [showLayer2, setShowLayer2] = useState(true);
+  const [controlState, setControlState] = useState(ControlStates.Default);
 
-  function getLocation() {
+  async function getLocation() {
     if (navigator.geolocation) {
+      setControlState(ControlStates.Changing);
       navigator.geolocation.getCurrentPosition(showPosition);
+      await setDelayForAnimation(2000);
+      setControlState(ControlStates.Default);
     } else {
       console.log("Geolocation is not supported by this browser.");
     }
   }
 
-  function showPosition(position) {
+  async function showPosition(position) {
     setCenter([position.coords.longitude, position.coords.latitude]);
-    setZoom(14);
+    setZoom(15);
   }
 
   return (
@@ -74,8 +81,24 @@ const Test = () => {
           )}
         </Layers>
         <MapControls>
-          <ZoomInOutControls />
-          <GeolocationControl onClick={getLocation} />
+          <CustomControl
+            type={ControlTypes.ZoomIn}
+            onClick={() => {
+              setZoom(zoom + 1);
+            }}
+          />
+          <CustomControl
+            type={ControlTypes.ZoomOut}
+            onClick={() => {
+              setZoom(zoom - 1);
+              console.log("click");
+            }}
+          />
+          <CustomControl
+            type={ControlTypes.Geolocation}
+            onClick={getLocation}
+            controlState={controlState}
+          />
         </MapControls>
       </Map>
       <div className="testCity">
