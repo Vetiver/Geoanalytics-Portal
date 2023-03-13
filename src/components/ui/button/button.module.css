@@ -54,16 +54,15 @@
 }
 
 .default:hover {
-  background: transparent;
+  /* background: rgba(5, 60, 91, 1); */
 }
 
 .default:hover:before {
   background: #fff;
-  opacity: 0.1;
 }
 
 .default:hover .contentContainer {
-  background: transparent;
+  background: rgba(5, 60, 91, 1);
 }
 
 .default:active {

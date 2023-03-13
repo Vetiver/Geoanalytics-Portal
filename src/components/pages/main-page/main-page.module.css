@@ -9,7 +9,7 @@
     #001f33 100%
   ); */
   background: url(../../../images/bg-images.png) no-repeat;
-  background-size: cover;
+  background-size:cover;
 }
 
 .main {
@@ -58,16 +58,16 @@
 }
 
 .cornerLineLeft {
-  bottom: -11px;
-  left: 26px;
+      bottom: -11px;
+        left: 26px;
 }
 
 .straightLine {
   bottom: 32px;
-  left: 40%;
+    left: 40%;
 }
 
 .cornerLineRight {
   bottom: 95px;
-  right: 42px;
+    right: 42px;
 }

@@ -19,7 +19,7 @@ function Button({ content, type = "default", direction = "right" }) {
   return (
     <button
       className={`${styles.button} ${styles[type]}`}
-      onMouseUp={handleOnMouseUp}
+      onMouseLeave={handleOnMouseUp}
       onMouseDown={handleOnMouseDown}
     >
       <div className={styles.contentContainer}>
