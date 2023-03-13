@@ -10,6 +10,7 @@ function Sidebar() {
     console.log(selected);
   };
   return (
+    selected ? 
     <aside
       className={selected === true ? `${styles.sidebar}` : `${styles.close}`}
     >
@@ -19,28 +20,22 @@ function Sidebar() {
           <p className={styles.sideName}>Управление данными</p>
         </div>
         <div className={styles.checkboxContainer}>
-          <label class={styles.label}>
-            One
+          <label className={styles.label}>
+          agro
             <input type="checkbox" />
-            <span class={styles.checkmark}></span>
+            <span className={styles.checkmark}></span>
           </label>
 
-          <label class={styles.label}>
-            Two
+          <label className={styles.label}>
+          forest
             <input type="checkbox" />
-            <span class={styles.checkmark}></span>
+            <span className={styles.checkmark}></span>
           </label>
 
-          <label class={styles.label}>
-            Three
+          <label className={styles.label}>
+          boundaries
             <input type="checkbox" />
-            <span class={styles.checkmark}></span>
-          </label>
-
-          <label class={styles.label}>
-            Four
-            <input type="checkbox" />
-            <span class={styles.checkmark}></span>
+            <span className={styles.checkmark}></span>
           </label>
         </div>
       </div>
@@ -48,6 +43,11 @@ function Sidebar() {
         <img className={styles.imgButton} src={buttonArrow} alt="arrow" />
       </button>
     </aside>
+    :
+    <button onClick={toggle} className={styles.openButton}>
+      <img className={styles.dataImg} src={data} alt="Logo" />
+      <img className={styles.openArrow} src={buttonArrow} alt="arrow" />
+    </button>
   );
 }
 

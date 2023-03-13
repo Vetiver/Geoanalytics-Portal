@@ -1,19 +1,19 @@
 .sidebar {
   display: flex;
   position: absolute;
-  top: 120px;
   width: 18%;
-  height: 100%;
+  height: 88%;
   background: radial-gradient(
     67.53% 67.53% at 10.47% 30.01%,
     #073a5b 25.35%,
     #001f33 100%
   );
-  transition: 0.5s;
+  transition: 0.5s;z-index: 1;
 }
 
 .sideContainer {
-  width: 330px;
+  max-width: 330px;
+  width: fit-content;
 }
 
 .sideName {
@@ -113,7 +113,7 @@
   position: absolute;
   top: 120px;
   width: 17%;
-  height: 1000px;
+  height: 100%;
   background: radial-gradient(
     67.53% 67.53% at 10.47% 30.01%,
     #073a5b 25.35%,
@@ -121,4 +121,23 @@
   );
   transition: 0.5s;
   transform: translateX(-100%);
+}
+
+.openButton {
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  left: 0;
+  width: 67px;
+  height: 60px;
+  background: #053C5B;
+  z-index: 10;
+}
+
+.openArrow {
+  transform: rotate(59deg);
 }
