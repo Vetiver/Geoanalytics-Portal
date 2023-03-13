@@ -35,12 +35,8 @@
   text-align: center;
   list-style: none;
   cursor: pointer;
-  transition: margin-bottom 0.5s;
+  transition: padding 0.5s;
   position: relative;
-}
-
-.navLink:hover {
-  margin-bottom: 10px;
 }
 
 .navLink:after {
@@ -52,10 +48,14 @@
   height: 2px;
   background: #fff;
   opacity: 0;
-  z-index: 2;
-  transition: opacity 0.5s;
+  /* transition: display 0.5s; */
 }
 
-.navLink:hover:after{
+.navLink:hover {
+  padding-bottom: 10px;
+}
+
+.navLink:hover .navLink:after{
   opacity: 1;
+  /* transition: display 0.5s; */
 }

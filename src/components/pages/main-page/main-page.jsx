@@ -10,12 +10,8 @@ import {
   cornerLineRight,
 } from "../../../images/decoration-lines/decoration-lines";
 import { Link } from "react-router-dom";
-import { useRef } from "react";
 
 function MainPage() {
-  
-  const contactsId = useRef();
-
   return (
     <div className={styles.mainPage}>
       <Header />

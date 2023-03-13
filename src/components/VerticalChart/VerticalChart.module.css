@@ -1,0 +1,25 @@
+.chart {
+    margin-top: 35px;
+    width: 500px;
+    height: 256px;
+}
+
+.header {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33px;
+    /* identical to box height */
+
+
+    /* White */
+
+    color: #FFFFFF;
+}
+
+.close {
+    display: none;
+}

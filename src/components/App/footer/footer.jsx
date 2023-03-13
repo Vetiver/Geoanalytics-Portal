@@ -8,7 +8,7 @@ function Footer() {
       <div className={styles.div}></div>
       <div className={styles.footerContainer}>
         <div className={styles.contactsContainerBorder}>
-          <div className={styles.contactsContainer} id="contactsId">
+          <div className={styles.contactsContainer}>
             <h3 className={styles.title}>Контакты</h3>
             <ul className={styles.contactsList}>
               <li className={styles.contactItem}>
@@ -39,11 +39,7 @@ function Footer() {
               </li>
             </ul>
           </div>
-          <img
-            className={styles.line}
-            src={longCornerLine}
-            alt="Декоративный элемент: линия"
-          />
+          <img className={styles.line} src={longCornerLine} alt="Декоративный элемент: линия" />
         </div>
         <p className={styles.copyright}>
           @ Copyright 2023. Geoanalitics. Все права защищены.
