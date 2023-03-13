@@ -1,17 +1,17 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import styles from "./App.module.css";
 import MainPage from "../../components/pages/main-page/main-page";
 import { Route, Routes } from "react-router-dom";
 import GeodeticApplicationPage from "../pages/GeodeticApplicationPage/GeodeticApplicationPage";
 import { useDispatch, useSelector } from "react-redux";
-import { getAnalitic } from "../../services/actions/analitic";
+import { getAnalytic } from "../utils/fetches";
 
 const App = () => {
   const dispatch = useDispatch();
-  const analitic = useSelector((state) => state.analiticReduser.allAnalitic);
-  console.log(analitic);
+  const analytics = useSelector((state) => state.analyticReducer.allAnalytic);
+  console.log(analytics);
   useEffect(() => {
-    dispatch(getAnalitic());
+    dispatch(getAnalytic());
   }, []);
   return (
     <div className={styles.page}>

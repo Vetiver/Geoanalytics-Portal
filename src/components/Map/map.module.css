@@ -1,4 +1,5 @@
 .olMap {
+  position: relative;
   min-width: 600px;
   min-height: 500px;
   height: 800px;
