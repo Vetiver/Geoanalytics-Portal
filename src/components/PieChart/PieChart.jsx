@@ -1,32 +1,31 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
 import styles from "./PieChart.module.css";
+import { useDispatch, useSelector } from "react-redux";
 function PieChart({close}) {
     ChartJS.register(ArcElement, Tooltip, Legend);
-
+  const dataArr = [];
+  const colorArr = [];
+  const labelArr = [];
+  const analytics = useSelector((state) => state.analyticReducer.allAnalytic);
+  useEffect(() => {
+    if (analytics !== null ) {
+      analytics.analytics[3].objects.forEach(element => {
+        dataArr.push(element.data);
+        colorArr.push(element.color);
+        labelArr.push(element.title)
+      });
+    }
+  }, [dataArr, colorArr, labelArr])
  const data = {
+  labels: labelArr,
   datasets: [
     {
-      label: '# Число',
-      data: [12, 19, 3, 5, 2, 3],
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(255, 159, 64, 0.2)',
-      ],
-      borderColor: [
-        'rgba(255, 99, 132, 1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)',
-        'rgba(255, 159, 64, 1)',
-      ],
-      borderWidth: 1,
+      label: `${labelArr}`,
+      data: dataArr,
+      backgroundColor: colorArr,
+      borderWidth: 0,
     },
   ],
 };
