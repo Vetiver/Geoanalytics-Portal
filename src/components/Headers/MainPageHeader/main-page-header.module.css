@@ -1,10 +1,5 @@
 .header {
   width: 100%;
-  background: linear-gradient(
-    0deg,
-    rgba(1, 35, 56, 0) 8.99%,
-    rgba(1, 35, 56, 0.9) 46.44%
-  );
   display: flex;
   justify-content: center;
 }
@@ -15,6 +10,7 @@
   padding: 25px 0;
   display: flex;
   justify-content: space-between;
+    z-index: 1;
 }
 
 .logo {

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import styles from "./App.module.css";
 import MainPage from "../../components/pages/main-page/main-page";
 import { Route, Routes } from "react-router-dom";
@@ -9,7 +9,6 @@ import { getAnalytic } from "../utils/fetches";
 const App = () => {
   const dispatch = useDispatch();
   const analytics = useSelector((state) => state.analyticReducer.allAnalytic);
-  console.log(analytics);
   useEffect(() => {
     dispatch(getAnalytic());
   }, []);
