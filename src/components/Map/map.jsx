@@ -33,13 +33,13 @@ const Map = ({ children, zoom, center }) => {
     if (!map) return;
     map.getView().setCenter(center);
   }, [center]);
-  useEffect(() => {
-    map &&
-      dispatch({
-        type: SET_MAP,
-        payload: map,
-      });
-  }, [map]);
+  // useEffect(() => {
+  //   map &&
+  //     dispatch({
+  //       type: SET_MAP,
+  //       payload: map,
+  //     });
+  // }, [map]);
   return (
     <MapContext.Provider value={{ map }}>
       <div ref={mapRef} className={styles.olMap}>
