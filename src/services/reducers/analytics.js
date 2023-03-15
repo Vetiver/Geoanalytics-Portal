@@ -2,10 +2,18 @@ import {
   GET_ANALYTICS_REQUEST,
   GET_ANALYTICS_SUCCESS,
   GET_ANALYTICS_FAILED,
+  GET_PIE_SUCCESS,
+  GET_VERTICAL_SUCCESS,
+  GET_ARABLE_METRIC_SUCCESS,
+  GET_FOREST_METRIC_SUCCESS,
 } from "../actions/analytics";
 
 const initialState = {
-  allAnalytic: null,
+  allAnalytics: null,
+  pieAnalytics: null,
+  verticalAnalytics: null,
+  arableLandMetrics: null,
+  foresMetric: null,
   isLoad: false,
   isError: false,
 };
@@ -21,7 +29,7 @@ export const analyticReducer = (state = initialState, action) => {
     case GET_ANALYTICS_SUCCESS:
       return {
         ...state,
-        allAnalytic: action.payload,
+        allAnalytics: action.payload,
         isLoad: false,
         isError: false,
       };
@@ -31,6 +39,26 @@ export const analyticReducer = (state = initialState, action) => {
         ...state,
         error: true,
         isLoad: false,
+      };
+    case GET_PIE_SUCCESS:
+      return {
+        ...state,
+        pieAnalytics: action.payload
+      };
+    case GET_VERTICAL_SUCCESS:
+      return {
+        ...state,
+        verticalAnalytics: action.payload
+      };
+      case GET_FOREST_METRIC_SUCCESS:
+      return {
+        ...state,
+        foresMetric: action.payload
+      };
+      case GET_ARABLE_METRIC_SUCCESS:
+      return {
+        ...state,
+        arableLandMetrics: action.payload
       };
 
     default:

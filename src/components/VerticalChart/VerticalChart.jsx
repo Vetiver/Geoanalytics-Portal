@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useMemo} from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -11,8 +11,27 @@ import {
 import { Bar } from 'react-chartjs-2';
 import styles from "./VerticalChart.module.css";
 import faker from 'faker';
+import { useDispatch, useSelector } from "react-redux";
 
 function VerticalChart({close}) {
+  const analytics = useSelector((state) => state.analyticReducer.verticalAnalytics);
+  const arrWithData = useMemo(() => {
+    return (
+      analytics &&
+      analytics.objects.map((el) => {
+       return el.data;
+      })
+    );
+  }, [analytics]);
+  const arrWithColor = useMemo(() => {
+    return (
+      analytics &&
+      analytics.objects.map((el) => {
+       return el.color;
+      })
+    );
+  }, [analytics]);
+
     ChartJS.register(
         CategoryScale,
         LinearScale,
@@ -30,21 +49,21 @@ function VerticalChart({close}) {
           },
         },
       };
-      const labels = ['Анализ', 'Система', 'Оборот оборот', 'Погружение', 'Анализ данных'];
+      const labels = ['Строительство', 'Распашка', 'Зарастание'];
        const data = {
         labels,
         datasets: [
           {
-            label: 'Dataset 1',
-            data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-            backgroundColor: 'rgba(255, 99, 132, 0.5)',
+            label: '',
+            data: arrWithData,
+            backgroundColor: arrWithColor,
           },
           
         ],
       };
-    return (
+    return ( analytics &&
         <div className={close === true ? `${styles.chart}` : `${styles.close}`}>
-          <h4 className={styles.header}>Столбчатая диаграмма</h4>
+          <h4 className={styles.header}>{analytics.title}</h4>
             <Bar options={options} data={data} />
         </div>
     );

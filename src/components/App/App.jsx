@@ -8,8 +8,6 @@ import { getAnalytic } from "../utils/fetches";
 
 const App = () => {
   const dispatch = useDispatch();
-  const analytics = useSelector((state) => state.analyticReducer.allAnalytic);
-  console.log(analytics);
   useEffect(() => {
     dispatch(getAnalytic());
   }, []);

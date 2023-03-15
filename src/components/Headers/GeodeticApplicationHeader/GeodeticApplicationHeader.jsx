@@ -11,7 +11,7 @@ function GeodeticApplicationHeader() {
     analytics !== null &&
     <header className={styles.header}>
       <img className={styles.image} src={logo} alt="Logo" />
-      <p className={styles.demo}>{analytics.name}</p>
+      <p className={styles.demo}>{''}</p>
       <Link to="/" className={styles.link}>
         <img className={styles.arrowLeft} src={arrowLeft} alt="Logo" />
         <p className={styles.back}>Вернуться на сайт</p>

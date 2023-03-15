@@ -1,19 +1,22 @@
-import React from 'react';
+import React,{useMemo} from 'react';
 import styles from "./Terrain.module.css";
+import { useSelector } from "react-redux";
 
 function Terrain({close}) {
-    return (
+    const arableLandMetrics = useSelector((state) => state.analyticReducer.arableLandMetrics);
+    const foresMetric = useSelector((state) => state.analyticReducer.foresMetric);
+    return ( arableLandMetrics && foresMetric &&
         <div className={close === true ? `${styles.terrainContainer}` : `${styles.close}`}>
             <div className={styles.firsColumn}>
                 <h3 className={styles.header}>Forest</h3>
                 <p className={styles.firstText}>Воронежская область</p>
             </div>
             <div>
-                <p className={styles.text}>общая пплощадь</p>
-                <p className={styles.text}>1000кв. к.</p>
+                <p className={styles.text}>{arableLandMetrics.title}</p>
+                <p className={styles.text}>{arableLandMetrics.data + arableLandMetrics.units}</p>
             </div>
-                <p className={styles.text}>какая-то инфа</p>
-                <p className={styles.text}>11/12/2023</p>
+                <p className={styles.text}>{foresMetric.title}</p>
+                <p className={styles.text}>{foresMetric.data + foresMetric.units}</p>
         </div>
     );
 }
