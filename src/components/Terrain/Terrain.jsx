@@ -1,3 +1,4 @@
+import React, { useMemo } from "react";
 import styles from "./Terrain.module.css";
 import { useSelector } from "react-redux";
 import classNames from "classnames";
@@ -6,7 +7,9 @@ function Terrain({ close, loading = false }) {
   const arableLandMetrics = useSelector(
     (state) => state.analyticReducer.arableLandMetrics
   );
-  const foresMetric = useSelector((state) => state.analyticReducer.foresMetric);
+  const forestMetrics = useSelector(
+    (state) => state.analyticReducer.forestMetrics
+  );
   const isLoading = classNames({
     [styles.loading]: loading,
   });
@@ -17,13 +20,15 @@ function Terrain({ close, loading = false }) {
 
   return (
     arableLandMetrics &&
-    foresMetric && (
+    forestMetrics && (
       <div className={`${styles.terrainContainer} ${isHidden}`}>
         <div className={`${styles.firstColumn} ${isHidden}`}>
           <h3 className={`${styles.header} ${isLoading}`}>Forest</h3>
-          <p className={`${styles.text} ${isLoading}`}>Воронежская область</p>
+          <p className={`${styles.text} ${isLoading}`}>
+            Воронежская область
+          </p>
         </div>
-        <div className={`${styles.line} ${isLoading}`}></div>
+        <div className={styles.line}></div>
         <div>
           <p className={`${styles.title} ${isLoading}`}>
             {arableLandMetrics.title}
@@ -33,9 +38,11 @@ function Terrain({ close, loading = false }) {
           </p>
         </div>
         <div>
-          <p className={`${styles.title} ${isLoading}`}>{foresMetric.title}</p>
+          <p className={`${styles.title} ${isLoading}`}>
+            {forestMetrics.title}
+          </p>
           <p className={`${styles.text} ${isLoading}`}>
-            {foresMetric.data + foresMetric.units}
+            {forestMetrics.data + forestMetrics.units}
           </p>
         </div>
       </div>
