@@ -1,55 +1,57 @@
 import React, { useState } from "react";
 import styles from "./AnalyticsSidebar.module.css";
-import analitLogo from "../../images/logos/analitLogo.svg";
-import buttonArrow from "../../images/logos/buttonArrow.svg";
 import VerticalChart from "../VerticalChart/VerticalChart";
 import PieChart from "../PieChart/PieChart";
 import Terrain from "../Terrain/Terrain";
+import classNames from "classnames";
+import { arrowButton, analyticsLogo } from "../../images/logos/logos";
+import BottomSidebarLoader from "../Loaders/BottomSidebarLoader/bottom-sidebar-loader";
 
 function AnalyticsSidebar() {
   const [selected, setSelected] = useState(true);
   const toggle = () => {
     setSelected(!selected);
   };
-  return (
-    selected ? 
-      <aside
-      className={selected === true ? `${styles.sidebar}` : `${styles.close}`}
-    >
-      <button
-        onClick={toggle}
-        className={
-          selected === true
-            ? `${styles.hideButton}`
-            : `${styles.hideButtonNone}`
-        }
-      >
-        <img className={styles.imgButton} src={buttonArrow} alt="arrow" />
+
+  const isSidebarOpened = classNames({
+    [styles.sidebar]: selected,
+    [styles.sidebarIsClosed]: !selected,
+  });
+
+  const isHideButtonVisible = classNames({
+    [styles.hideButton]: selected,
+    [styles.hideButtonIsHidden]: !selected,
+  });
+
+  const isInfoContainerVisible = classNames({
+    [styles.infoContainer]: selected,
+    [styles.infoContainerIsHidden]: !selected,
+  });
+
+  return selected ? (
+    <aside className={isSidebarOpened}>
+      <button onClick={toggle} className={isHideButtonVisible}>
+        <img className={styles.imgButton} src={arrowButton} alt="arrow" />
       </button>
-      <div className={styles.sideContainer}>
-        <div
-          className={
-            selected === true
-              ? `${styles.infoContainer}`
-              : `${styles.infoContainerClose}`
-          }
-        >
-          <img className={styles.dataimg} src={analitLogo} alt="Logo" />
+      {/* <div className={styles.sideContainer}>
+        <div className={isInfoContainerVisible}>
+          <img src={analyticsLogo} alt="Logo" />
           <p className={styles.sideName}>Аналитическая панель</p>
         </div>
-        <div className={styles.analiticsContainer}>
-          <Terrain close={selected}/>
-          <PieChart close={selected}/>
-          <VerticalChart close={selected}/>
+        <div className={styles.analyticsContainer}>
+          <Terrain close={selected} />
+          <PieChart close={selected} />
+          <VerticalChart close={selected} />
         </div>
-      </div>
+      </div> */}
+      <BottomSidebarLoader/>
     </aside>
-     : <button className={styles.openButton} onClick={toggle}>
-      <img className={styles.dataimg} src={analitLogo} alt="Logo" />
+  ) : (
+    <button className={styles.openButton} onClick={toggle}>
+      <img src={analyticsLogo} alt="Logo" />
       <p className={styles.sideName}>Аналитическая панель</p>
-      <img className={styles.openArrow} src={buttonArrow} alt="arrow" />
-      </button>
-    
+      <img className={styles.openArrow} src={arrowButton} alt="arrow" />
+    </button>
   );
 }
 

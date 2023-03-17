@@ -5,7 +5,6 @@ import { longCornerLine } from "../../images/decoration-lines/decoration-lines";
 function Footer() {
   return (
     <footer className={styles.footer}>
-      <div className={styles.div}></div>
       <div className={styles.footerContainer}>
         <div className={styles.contactsContainerBorder}>
           <div className={styles.contactsContainer} id="contactsId">

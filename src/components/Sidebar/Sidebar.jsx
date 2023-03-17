@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 import styles from "./Sidebar.module.css";
 import data from "../../images/logos/data.svg";
-import buttonArrow from "../../images/logos/buttonArrow.svg";
+import { arrowButton } from "../../images/logos/logos";
 
 function Sidebar() {
   const [selected, setSelected] = useState(true);
   const toggle = () => {
     setSelected(!selected);
-    console.log(selected);
   };
-  return (
-    selected ? 
+  return selected ? (
     <aside
       className={selected === true ? `${styles.sidebar}` : `${styles.close}`}
     >
@@ -21,32 +19,32 @@ function Sidebar() {
         </div>
         <div className={styles.checkboxContainer}>
           <label className={styles.label}>
-          agro
+            agro
             <input type="checkbox" />
             <span className={styles.checkmark}></span>
           </label>
 
           <label className={styles.label}>
-          forest
+            forest
             <input type="checkbox" />
             <span className={styles.checkmark}></span>
           </label>
 
           <label className={styles.label}>
-          boundaries
+            boundaries
             <input type="checkbox" />
             <span className={styles.checkmark}></span>
           </label>
         </div>
       </div>
       <button onClick={toggle} className={styles.hideButton}>
-        <img className={styles.imgButton} src={buttonArrow} alt="arrow" />
+        <img className={styles.imgButton} src={arrowButton} alt="arrow" />
       </button>
     </aside>
-    :
+  ) : (
     <button onClick={toggle} className={styles.openButton}>
       <img className={styles.dataImg} src={data} alt="Logo" />
-      <img className={styles.openArrow} src={buttonArrow} alt="arrow" />
+      <img className={styles.openArrow} src={arrowButton} alt="arrow" />
     </button>
   );
 }

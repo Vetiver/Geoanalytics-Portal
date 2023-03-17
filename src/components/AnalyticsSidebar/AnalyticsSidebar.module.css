@@ -37,7 +37,7 @@
   align-items: center;
 }
 
-.hideButtonNone {
+.hideButtonIsHidden {
   display: none;
   width: 100%;
   height: 20px;
@@ -80,7 +80,7 @@
   display: none;
 }
 
-.close {
+.sidebarIsClosed {
   flex-direction: column;
   position: absolute;
   bottom: 0;
@@ -95,11 +95,11 @@
   transform: translateY(+200%);
 }
 
-.infoContainerClose {
+.infoContainerIsHidden {
   visibility: hidden;
 }
 
-.analiticsContainer {
+.analyticsContainer {
   display: flex;
   gap: 158px;
   margin-left: 62px;
