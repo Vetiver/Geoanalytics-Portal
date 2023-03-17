@@ -38,13 +38,13 @@ function AnalyticsSidebar() {
           <img src={analyticsLogo} alt="Logo" />
           <p className={styles.sideName}>Аналитическая панель</p>
         </div>
+        {/* <BottomSidebarLoader /> */}
         <div className={styles.analyticsContainer}>
           <Terrain close={selected} />
           <DoughnutChart hidden={selected} />
           <VerticalChart close={selected} />
         </div>
       </div>
-      {/* <BottomSidebarLoader/> */}
     </aside>
   ) : (
     <button className={styles.openButton} onClick={toggle}>

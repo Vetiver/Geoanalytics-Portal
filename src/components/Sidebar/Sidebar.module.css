@@ -64,7 +64,7 @@
   width: 0;
 }
 
-.checkmark {
+.checkMark {
   position: absolute;
   top: 3px;
   left: 0;
@@ -75,12 +75,12 @@
   transition: background 0.2s;
 }
 
-.label input:checked ~ .checkmark {
+.label input:checked ~ .checkMark {
   background-color: #2196f3;
   border-radius: 100%;
 }
 
-.label input:checked ~ .checkmark {
+.label input:checked ~ .checkMark {
   background: url(../../images/checkbox/checkbox-checked.svg);
   background-size: contain;
   transition: background 0.5s;
@@ -98,6 +98,7 @@
     0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725),
     0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
   position: relative;
+  cursor: pointer;
 }
 
 .imgButton {

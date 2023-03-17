@@ -13,7 +13,7 @@ const initialState = {
   pieAnalytics: null,
   verticalAnalytics: null,
   arableLandMetrics: null,
-  foresMetric: null,
+  forestMetrics: null,
   isLoad: false,
   isError: false,
 };
@@ -53,7 +53,7 @@ export const analyticReducer = (state = initialState, action) => {
       case GET_FOREST_METRIC_SUCCESS:
       return {
         ...state,
-        foresMetric: action.payload
+        forestMetrics: action.payload
       };
       case GET_ARABLE_METRIC_SUCCESS:
       return {
