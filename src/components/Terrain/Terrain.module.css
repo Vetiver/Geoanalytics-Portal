@@ -1,8 +1,8 @@
 .terrainContainer {
-  margin-top: 37px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  color: #fff;
 }
 
 .hidden {
@@ -11,77 +11,24 @@
 
 .header {
   margin: 0;
-  padding: 0;
+  padding: 0 0 4px;
   font: 700 24px/33px "Nunito";
-  color: #fff;
 }
 
 .title {
   margin: 0;
-  padding: 0;
-  color: #fff;
+  padding: 0 0 4px;
   font: 600 18px/25px "Nunito";
 }
 
 .text {
   margin: 0;
   padding: 0;
-  color: #ffffff;
   font: 400 18px/25px "Nunito";
-}
-
-.firstText {
-  margin: 0;
-  padding: 0 0 16px;
-  font: 400 16px/25px "Nunito";
-  color: #fff;
 }
 
 .line {
   width: 100%;
   height: 1px;
   background: #fff;
-}
-
-.loading {
-  color: transparent !important;
-  background: linear-gradient(
-    90.05deg,
-    #1f76a7 30.47%,
-    rgba(31, 118, 167, 0.1) 57.74%
-  );
-  opacity: 0.4;
-  border-radius: 6px;
-  animation-delay: 200ms;
-  animation-duration: 3s;
-  animation-name: Loading;
-  animation-direction: reverse;
-  animation-timing-function: ease-in;
-  animation-iteration-count: infinite;
-  background-size: 250%;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-.header.loading,
-.firstText.loading,
-.title.loading {
-  max-height: 24px;
-  min-width: 289px;
-  margin-bottom: 10px;
-}
-
-.text.loading {
-  max-height: 16px;
-  min-width: 206px;
-}
-
-.terrainContainer:has(.header.loading) {
-  gap: 18px;
-}
-@keyframes Loading {
-  to {
-    background-position: 70% 0;
-  }
 }

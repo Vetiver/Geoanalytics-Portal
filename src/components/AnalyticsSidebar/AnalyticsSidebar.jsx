@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./AnalyticsSidebar.module.css";
 import VerticalChart from "../VerticalChart/VerticalChart";
-import PieChart from "../PieChart/PieChart";
+import DoughnutChart from "../DoughnutChart/doughnut-chart";
 import Terrain from "../Terrain/Terrain";
 import classNames from "classnames";
 import { arrowButton, analyticsLogo } from "../../images/logos/logos";
@@ -33,18 +33,18 @@ function AnalyticsSidebar() {
       <button onClick={toggle} className={isHideButtonVisible}>
         <img className={styles.imgButton} src={arrowButton} alt="arrow" />
       </button>
-      {/* <div className={styles.sideContainer}>
+      <div className={styles.sideContainer}>
         <div className={isInfoContainerVisible}>
           <img src={analyticsLogo} alt="Logo" />
           <p className={styles.sideName}>Аналитическая панель</p>
         </div>
         <div className={styles.analyticsContainer}>
           <Terrain close={selected} />
-          <PieChart close={selected} />
+          <DoughnutChart hidden={selected} />
           <VerticalChart close={selected} />
         </div>
-      </div> */}
-      <BottomSidebarLoader/>
+      </div>
+      {/* <BottomSidebarLoader/> */}
     </aside>
   ) : (
     <button className={styles.openButton} onClick={toggle}>

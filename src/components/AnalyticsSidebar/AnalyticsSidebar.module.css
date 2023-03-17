@@ -4,7 +4,6 @@
   position: absolute;
   bottom: 0px;
   width: 100%;
-  height: 358px;
   background: radial-gradient(
     67.53% 67.53% at 10.47% 30.01%,
     #073a5b 25.35%,
@@ -57,8 +56,6 @@
   height: 20px;
   border: none;
   background: #21648a;
-  /* 1 */
-
   box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07),
     0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198),
     0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275),
@@ -100,23 +97,26 @@
 }
 
 .analyticsContainer {
-  display: flex;
-  gap: 158px;
+  margin-top: 40px;
+  margin-bottom: 60px;
   margin-left: 62px;
+  gap: 158px;
+  display: grid;
+  grid-template-columns:
+    minmax(150px, max-content)
+    minmax(200px, max-content)
+    minmax(350px, 445px);
 }
 
 .openButton {
   cursor: pointer;
-  position: absolute;
+  position: fixed;
+  bottom: 0%;
   width: 18%;
-  padding: 0;
-  margin: 0;
-  bottom: 0;
-  left: 0;
   z-index: 10;
   display: flex;
   align-items: center;
-  background: #21648A;
+  background: #053C5B;
   border: 0;
 }
 
@@ -124,4 +124,15 @@
   margin-left: auto;
   transform: translate(-50%, -50%);
   transform: rotate(-2010deg);
+}
+
+@media screen and (max-width: 1600px) {
+  .analyticsContainer {
+    gap: 120px;
+    margin-left: 30px;
+    grid-template-columns: minmax(120px, max-content) minmax(150px, 200px) minmax(
+        250px,
+        400px
+      );
+  }
 }

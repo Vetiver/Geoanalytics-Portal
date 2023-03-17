@@ -3,6 +3,7 @@
   position: absolute;
   width: 18%;
   height: 88%;
+  height: -webkit-fill-available;
   background: radial-gradient(
     67.53% 67.53% at 10.47% 30.01%,
     #073a5b 25.35%,
