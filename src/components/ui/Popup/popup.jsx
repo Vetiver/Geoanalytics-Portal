@@ -1,0 +1,48 @@
+import styles from "./popup.module.css";
+import { PopupType } from "../../../constants/popup";
+import { arrowDown } from "../../../images/logos/logos";
+
+function Popup({ type, arableLandSquare, forestSquare, moreButton = false }) {
+  return (
+    <div className={styles.popupContainer}>
+      {type === PopupType.Forest && (
+        <div className={styles.squareContainer}>
+          <div className={styles.titleAndCloseButtonContainer}>
+            <h3 className={styles.title}>Forest</h3>{" "}
+            <button className={styles.closeButton} />
+          </div>
+          <div className={styles.line}></div>
+          <p className={styles.subtitle}>Площадь объекта</p>
+          <p className={styles.square}>{forestSquare}</p>
+          {moreButton && (
+            <button className={styles.moreButton}>
+              Подробнее
+              <img
+                className={styles.buttonIcon}
+                src={arrowDown}
+                alt="стрелка вниз"
+              />
+            </button>
+          )}
+        </div>
+      )}
+      {type === PopupType.Squares && (
+        <>
+          <div className={styles.squareContainer}>
+            <div className={styles.titleAndCloseButtonContainer}>
+              <h3 className={styles.title}>Forest</h3>{" "}
+              <button className={styles.closeButton} />
+            </div>
+            <p className={styles.square}>{arableLandSquare}</p>
+          </div>
+          <div className={styles.squareContainer}>
+            <h3 className={styles.title}>Площадь леса</h3>
+            <p className={styles.square}>{arableLandSquare}</p>
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
+export default Popup;
