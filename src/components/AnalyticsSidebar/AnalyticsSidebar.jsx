@@ -6,12 +6,18 @@ import Terrain from "../Terrain/Terrain";
 import classNames from "classnames";
 import { arrowButton, analyticsLogo } from "../../images/logos/logos";
 import BottomSidebarLoader from "../Loaders/BottomSidebarLoader/bottom-sidebar-loader";
+import { useSelector } from "react-redux";
 
 function AnalyticsSidebar() {
   const [selected, setSelected] = useState(true);
+  const analytics = useSelector(
+    (state) => state.analyticReducer.verticalAnalytics
+  );
   const toggle = () => {
     setSelected(!selected);
   };
+
+  console.log(analytics)
 
   const isSidebarOpened = classNames({
     [styles.sidebar]: selected,
@@ -38,12 +44,13 @@ function AnalyticsSidebar() {
           <img src={analyticsLogo} alt="Logo" />
           <p className={styles.sideName}>Аналитическая панель</p>
         </div>
-        {/* <BottomSidebarLoader /> */}
-        <div className={styles.analyticsContainer}>
+        { analytics ? <div className={styles.analyticsContainer}>
           <Terrain close={selected} />
           <DoughnutChart hidden={selected} />
           <VerticalChart close={selected} />
-        </div>
+        </div> :  <BottomSidebarLoader /> }
+       
+        
       </div>
     </aside>
   ) : (
