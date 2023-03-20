@@ -2,9 +2,15 @@ import styles from "./popup.module.css";
 import { PopupType } from "../../../constants/popup";
 import { arrowDown } from "../../../images/logos/logos";
 
-function Popup({ type, arableLandSquare, forestSquare, moreButton = false }) {
+function Popup({
+  type = PopupType.Forest,
+  arableLandSquare,
+  forestSquare,
+  moreButton = false,
+  setPopup,
+}) {
   return (
-    <div className={styles.popupContainer}>
+    <div className={styles.popupContainer} id="popup" ref={setPopup}>
       {type === PopupType.Forest && (
         <div className={styles.squareContainer}>
           <div className={styles.titleAndCloseButtonContainer}>

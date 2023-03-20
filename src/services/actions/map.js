@@ -1,1 +1,3 @@
 export const SET_MAP = "SET_MAP";
+export const SET_COORDINATES = "SET_COORDINATES";
+export const RESET_COORDINATES = "RESET_COORDINATES";

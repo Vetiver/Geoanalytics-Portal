@@ -10,10 +10,12 @@ import {
   cornerLineRight,
 } from "../../../images/decoration-lines/decoration-lines";
 import { Link } from "react-router-dom";
+import Popup from "../../ui/Popup/popup";
 
 function MainPage() {
   return (
     <div className={styles.mainPage}>
+      <Popup/>
       <div className={styles.mainPageContainer}>
         <MainPageHeader />
         <main className={styles.main}>

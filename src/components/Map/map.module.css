@@ -4,6 +4,7 @@
   min-height: 500px;
   height: 800px;
   width: 100%;
+  cursor: pointer;
 }
 
 .ol-control {
@@ -15,6 +16,6 @@
 }
 
 .ol-full-screen {
-  top: .5em;
-  right: .5em;
+  top: 0.5em;
+  right: 0.5em;
 }

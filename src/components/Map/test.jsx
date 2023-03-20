@@ -9,13 +9,15 @@ import { osm, vector } from "../Source";
 import { fromLonLat, get } from "ol/proj";
 import GeoJSON from "ol/format/GeoJSON";
 import MapControls from "../MapControls/map-controls";
-// import FullScreenControl from "../MapControls/FullScreenControl/full-screen-control";
 import mapConfig from "../utils/map-config.json";
-import ZoomInOutControls from "../MapControls/ZoomInOutControls/zoom-in-out-controls";
-import GeolocationControl from "../MapControls/GeolocationControl/geolocation-control";
+
 import CustomControl from "../ui/CustomController/custom-controller";
 import { ControlStates, ControlTypes } from "../../constants/controls";
 import { setDelayForAnimation } from "../utils/functions";
+
+import { useSelector } from "react-redux";
+
+import Popup from "../ui/Popup/popup";
 
 let styles = {
   MultiPolygon: new Style({
@@ -37,6 +39,8 @@ const Test = () => {
   const [showLayer1, setShowLayer1] = useState(true);
   const [showLayer2, setShowLayer2] = useState(true);
   const [controlState, setControlState] = useState(ControlStates.Default);
+  const [popup, setPopup] = useState();
+  const mapCoordinates = useSelector((state) => state.mapReducer.coordinates);
 
   async function getLocation() {
     if (navigator.geolocation) {
@@ -56,7 +60,16 @@ const Test = () => {
 
   return (
     <div className="test">
-      <Map center={fromLonLat(center)} zoom={zoom}>
+      {mapCoordinates.length && (
+        <Popup setPopup={setPopup} forestSquare="2443432" moreButton={true} />
+      )}
+
+      <Map
+        center={fromLonLat(center)}
+        zoom={zoom}
+        element={popup && popup}
+        position={mapCoordinates && mapCoordinates}
+      >
         <Layers>
           <TileLayer source={osm()} zIndex={0} />
           {showLayer1 && (
