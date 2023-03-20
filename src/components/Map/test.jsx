@@ -13,7 +13,7 @@ import MapControls from "../MapControls/map-controls";
 import mapConfig from "../utils/map-config.json";
 import ZoomInOutControls from "../MapControls/ZoomInOutControls/zoom-in-out-controls";
 import GeolocationControl from "../MapControls/GeolocationControl/geolocation-control";
-import CustomControl from "../ui/button/CustomController/custom-controller";
+import CustomControl from "../ui/CustomController/custom-controller";
 import { ControlStates, ControlTypes } from "../../constants/controls";
 import { setDelayForAnimation } from "../utils/functions";
 

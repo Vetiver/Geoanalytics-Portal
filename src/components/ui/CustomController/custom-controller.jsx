@@ -1,14 +1,13 @@
 import styles from "./custom-control.module.css";
 import classNames from "classnames";
 import { ThreeDots } from "react-loader-spinner";
-import { ControlStates, ControlTypes } from "../../../../constants/controls";
+import { ControlStates, ControlTypes } from "../../../constants/controls";
 
 function CustomControl({
   onClick,
   type,
   controlState = ControlStates.Default,
 }) {
-  console.log(controlState);
   const buttonImageClass = classNames({
     [styles.zoomIn]: type === ControlTypes.ZoomIn,
     [styles.zoomOut]: type === ControlTypes.ZoomOut,

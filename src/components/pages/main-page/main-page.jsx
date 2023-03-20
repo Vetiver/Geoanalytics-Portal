@@ -1,9 +1,9 @@
-import MainPageHeader from "../../Headers/MainPageHeader/main-page-header";
+import MainPageHeader from "../../headers/MainPageHeader/main-page-header";
 import styles from "./main-page.module.css";
-import Button from "../../ui/button/button";
-import OpportunityCard from "../../ui/button/opportunity-card/opportunity-card";
+import Button from "../../ui/Button/button";
+import OpportunityCard from "../../ui/OpportunityCard/opportunity-card";
 import { keyOpportunityCards } from "../../../constants/key-opportunity-cards";
-import Footer from "../../footer/footer"; 
+import Footer from "../../Footer/footer";
 import {
   cornerLineLeft,
   straightLine,
@@ -17,6 +17,7 @@ function MainPage() {
       <div className={styles.mainPageContainer}>
         <MainPageHeader />
         <main className={styles.main}>
+   
           <section className={styles.introduction}>
             <div className={styles.blockWithLink}>
               <h1 className={styles.heading}>GeoAnalytics.ai</h1>

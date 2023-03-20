@@ -22,15 +22,15 @@
 }
 
 .zoomIn {
-  background-image: url(../../../../images/controls/zoom-in.svg);
+  background-image: url(../../../images/controls/zoom-in.svg);
 }
 
 .zoomOut {
-  background-image: url(../../../../images/controls/zoom-out.svg);
+  background-image: url(../../../images/controls/zoom-out.svg);
 }
 
 .geoLocation {
-  background-image: url(../../../../images/controls/geolocation.svg);
+  background-image: url(../../../images/controls/geolocation.svg);
 }
 
 .disabled {
