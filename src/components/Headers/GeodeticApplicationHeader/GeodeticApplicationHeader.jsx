@@ -1,9 +1,8 @@
-import React from "react";
 import styles from "./GeodeticApplicationHeader.module.css";
 import logo from "../../../images/logos/logo.svg";
 import arrowLeft from "../../../images/logos/arrow-left.svg";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 function GeodeticApplicationHeader() {
   const analytics = useSelector((state) => state.analyticReducer.allAnalytic);

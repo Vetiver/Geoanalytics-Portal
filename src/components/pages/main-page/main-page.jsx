@@ -1,9 +1,9 @@
-import MainPageHeader from "../../Headers/MainPageHeader/main-page-header";
+import MainPageHeader from "../../headers/MainPageHeader/main-page-header";
 import styles from "./main-page.module.css";
-import Button from "../../ui/button/button";
+import Button from "../../ui/Button/button";
 import OpportunityCard from "../../ui/OpportunityCard/opportunity-card";
 import { keyOpportunityCards } from "../../../constants/key-opportunity-cards";
-import Footer from "../../footer/footer";
+import Footer from "../../Footer/footer";
 import {
   cornerLineLeft,
   straightLine,
