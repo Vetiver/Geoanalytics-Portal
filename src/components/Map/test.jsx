@@ -1,23 +1,21 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import "./test.css";
 import Map from "./map";
 import Layers from "../Layers/layers";
 import TileLayer from "../Layers/TileLayer/tile-layer";
 import VectorLayer from "../Layers/VectorLayer/vector-layer";
-import { Circle as CircleStyle, Fill, Stroke, Style } from "ol/style";
+import { Circle as  Fill, Stroke, Style } from "ol/style";
 import { osm, vector } from "../Source";
 import { fromLonLat, get } from "ol/proj";
-import GeoJSON from "ol/format/GeoJSON";
 import MapControls from "../MapControls/map-controls";
+// import FullScreenControl from "../MapControls/FullScreenControl/full-screen-control";
 import mapConfig from "../utils/map-config.json";
-
 import CustomControl from "../ui/CustomController/custom-controller";
 import { ControlStates, ControlTypes } from "../../constants/controls";
 import { setDelayForAnimation } from "../utils/functions";
-
-import { useSelector } from "react-redux";
-
-import Popup from "../ui/Popup/popup";
+import VectorTileSource from 'ol/source/VectorTile.js';
+import MVT from 'ol/format/MVT.js';
 
 let styles = {
   MultiPolygon: new Style({
@@ -29,18 +27,23 @@ let styles = {
       color: "#97BBB4",
     }),
   }),
-};
+}
+
 const geojsonObject = mapConfig.geojsonObject;
 const geojsonObject2 = mapConfig.geojsonObject2;
 
 const Test = () => {
-  const [center, setCenter] = useState([37.6173, 55.7558]);
+  const forestCheck = useSelector(
+    (state) => state.mapReducer.forestCheck
+  );
+  const agroCheck = useSelector(
+    (state) => state.mapReducer.agroCheck
+  );
+  const [center, setCenter] = useState([39.1238, 51.4018]);
   const [zoom, setZoom] = useState(9);
   const [showLayer1, setShowLayer1] = useState(true);
   const [showLayer2, setShowLayer2] = useState(true);
   const [controlState, setControlState] = useState(ControlStates.Default);
-  const [popup, setPopup] = useState();
-  const mapCoordinates = useSelector((state) => state.mapReducer.coordinates);
 
   async function getLocation() {
     if (navigator.geolocation) {
@@ -55,39 +58,29 @@ const Test = () => {
 
   async function showPosition(position) {
     setCenter([position.coords.longitude, position.coords.latitude]);
-    setZoom(15);
+    setZoom(12);
   }
 
   return (
     <div className="test">
-      {mapCoordinates.length && (
-        <Popup setPopup={setPopup} forestSquare="2443432" moreButton={true} />
-      )}
-
-      <Map
-        center={fromLonLat(center)}
-        zoom={zoom}
-        element={popup && popup}
-        position={mapCoordinates && mapCoordinates}
-      >
+      <Map center={fromLonLat(center)} zoom={zoom}>
         <Layers>
           <TileLayer source={osm()} zIndex={0} />
-          {showLayer1 && (
+          {agroCheck && (
             <VectorLayer
-              source={vector({
-                features: new GeoJSON().readFeatures(geojsonObject, {
-                  featureProjection: get("EPSG:3857"),
-                }),
+              source={ new VectorTileSource({
+                format: new MVT(),
+                url: 'https://geoanalytics.ai/tiles/agro_vrn/{z}/{x}/{y}.pbf',
               })}
               style={styles.MultiPolygon}
+              
             />
           )}
-          {showLayer2 && (
-            <VectorLayer
-              source={vector({
-                features: new GeoJSON().readFeatures(geojsonObject2, {
-                  featureProjection: get("EPSG:3857"),
-                }),
+          {forestCheck && (
+              <VectorLayer
+              source={ new VectorTileSource({
+                format: new MVT(),
+                url: 'https://geoanalytics.ai/tiles/forest_vrn/{z}/{x}/{y}.pbf',
               })}
               style={styles.MultiPolygon}
             />
@@ -114,22 +107,6 @@ const Test = () => {
           />
         </MapControls>
       </Map>
-      <div className="testCity">
-        <input
-          type="checkbox"
-          checked={showLayer1}
-          onChange={(event) => setShowLayer1(event.target.checked)}
-        />{" "}
-        Johnson County
-      </div>
-      <div className="testCity">
-        <input
-          type="checkbox"
-          checked={showLayer2}
-          onChange={(event) => setShowLayer2(event.target.checked)}
-        />{" "}
-        Wyandotte County
-      </div>
     </div>
   );
 };

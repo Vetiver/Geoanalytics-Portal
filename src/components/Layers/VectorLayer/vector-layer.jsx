@@ -1,12 +1,12 @@
 import { useContext, useEffect } from "react";
 import MapContext from "../../Map/MapContext/map-context";
-import OLVectorLayer from "ol/layer/Vector";
+import VectorTileLayer from 'ol/layer/VectorTile.js';
 
 const VectorLayer = ({ source, style, zIndex = 0 }) => {
   const { map } = useContext(MapContext);
   useEffect(() => {
     if (!map) return;
-    let vectorLayer = new OLVectorLayer({
+    let vectorLayer = new VectorTileLayer({
       source,
       style
     });

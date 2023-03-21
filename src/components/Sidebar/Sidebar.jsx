@@ -2,15 +2,17 @@ import React, { useState } from "react";
 import styles from "./Sidebar.module.css";
 import data from "../../images/logos/data.svg";
 import { arrowButton } from "../../images/logos/logos";
-
+import { useDispatch, useSelector } from "react-redux";
+import {TOGGLE_FOREST, TOGGLE_AGRO} from "../../services/actions/map"
 function Sidebar() {
-  const [selected, setSelected] = useState(true);
+  const dispatch = useDispatch();
+  const [forestSelected, setForestSelected] = useState(true);
   const toggle = () => {
-    setSelected(!selected);
+    setForestSelected(!forestSelected);
   };
-  return selected ? (
+  return forestSelected ? (
     <aside
-      className={selected === true ? `${styles.sidebar}` : `${styles.close}`}
+      className={forestSelected === true ? `${styles.sidebar}` : `${styles.close}`}
     >
       <div className={styles.sideContainer}>
         <div className={styles.infoContainer}>
@@ -20,13 +22,13 @@ function Sidebar() {
         <div className={styles.checkboxContainer}>
           <label className={styles.label}>
             agro
-            <input type="checkbox" />
+            <input type="checkbox" onChange={() => dispatch({ type: TOGGLE_FOREST })} />
             <span className={styles.checkMark}></span>
           </label>
 
           <label className={styles.label}>
             forest
-            <input type="checkbox" />
+            <input type="checkbox" onChange={() => dispatch({ type: TOGGLE_AGRO })} />
             <span className={styles.checkMark}></span>
           </label>
 

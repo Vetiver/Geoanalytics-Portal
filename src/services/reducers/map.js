@@ -1,8 +1,10 @@
-import { SET_MAP, SET_COORDINATES, RESET_COORDINATES } from "../actions/map";
+import { SET_MAP, SET_COORDINATES, RESET_COORDINATES, TOGGLE_FOREST, TOGGLE_AGRO } from "../actions/map";
 
 const initialState = {
   map: null,
   coordinates: [],
+  forestCheck: true,
+  agroCheck: true,
 };
 
 export const mapReducer = (state = initialState, action) => {
@@ -23,6 +25,16 @@ export const mapReducer = (state = initialState, action) => {
       return {
         ...state,
         coordinates: initialState.coordinates,
+      };
+    case TOGGLE_FOREST:
+      return {
+        ...state,
+        forestCheck: !state.forestCheck,
+      };
+    case TOGGLE_AGRO:
+      return {
+        ...state,
+        agroCheck: !state.agroCheck,
       };
 
     default:
