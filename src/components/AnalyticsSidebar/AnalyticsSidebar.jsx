@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./AnalyticsSidebar.module.css";
-import VerticalChart from "../VerticalChart/VerticalChart";
-import DoughnutChart from "../DoughnutChart/doughnut-chart";
+import VerticalChart from "../Charts/VerticalChart/VerticalChart";
+import DoughnutChart from "../Charts/DoughnutChart/doughnut-chart";
 import Terrain from "../Terrain/Terrain";
 import classNames from "classnames";
 import { arrowButton, analyticsLogo } from "../../images/logos/logos";
@@ -16,8 +16,6 @@ function AnalyticsSidebar() {
   const toggle = () => {
     setSelected(!selected);
   };
-
-  console.log(analytics)
 
   const isSidebarOpened = classNames({
     [styles.sidebar]: selected,

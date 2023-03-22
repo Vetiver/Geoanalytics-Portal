@@ -1,32 +1,37 @@
 import styles from "./map.module.css";
 import MapContext from "./MapContext/map-context";
 import * as ol from "ol";
-import { useEffect, useRef, useState } from "react";
-import { useDispatch } from "react-redux";
-import { SET_COORDINATES } from "../../services/actions/map";
+import { useEffect, useMemo, useRef, useState } from "react";
+import Popup from "../ui/Popup/popup";
 
-const Map = ({ children, zoom, center, element, position }) => {
+const Map = ({ children, zoom, center }) => {
   const mapRef = useRef();
-  const dispatch = useDispatch();
   const [map, setMap] = useState(null);
-
-  const overlay = new ol.Overlay({
-    element: element && element,
-    position: position && position,
-    stopEvent: false,
-    autoPan: {
-      animation: {
-        duration: 250,
+  const [clickOnMapCoordinates, setCoordinates] = useState([]);
+  const [popup, setPopup] = useState();
+  const overlay = useMemo(() => {
+    return new ol.Overlay({
+      element: popup,
+      position: clickOnMapCoordinates.length && clickOnMapCoordinates,
+      stopEvent: true,
+      autoPan: {
+        animation: {
+          duration: 250,
+        },
       },
-    },
-  });
+    });
+  }, [popup, clickOnMapCoordinates]);
+
+  const doesPopupExist = useMemo(() => {
+    return overlay?.options && overlay?.options.element;
+  }, [overlay]);
 
   useEffect(() => {
     let options = {
       view: new ol.View({ zoom, center }),
       layers: [],
       controls: [],
-      overlays: [overlay && overlay],
+      overlays: [ overlay],
     };
     let mapObject = new ol.Map(options);
     mapObject.setTarget(mapRef.current);
@@ -44,24 +49,29 @@ const Map = ({ children, zoom, center, element, position }) => {
     map.getView().setCenter(center);
   }, [center]);
 
-  const getCoordinates = () => {
-    map.on("click", (e) => {
-      const coordinate = e.coordinate;
-      coordinate &&
-        dispatch({
-          type: SET_COORDINATES,
-          payload: coordinate,
-        });
+  const setCoordinatesOnClick = () => {
+    map.on("singleclick", (e) => {
+      setCoordinates(e.coordinate);
     });
-    overlay && map.addOverlay(overlay);
+  };
+
+  const setOverlay = (overlay) => {
+    map.addOverlay(overlay);
+  };
+
+  const setPopupOnClick = () => {
+    setCoordinatesOnClick();
+    clickOnMapCoordinates && setOverlay(overlay);
+    clickOnMapCoordinates && console.log("set");
   };
 
   return (
     <MapContext.Provider value={{ map }}>
+      <Popup setPopup={setPopup} forestSquare="2443432" moreButton={true} />
       <div
         ref={mapRef}
         className={styles.olMap}
-        onClick={(e) => getCoordinates(e)}
+        onClick={(e) => setPopupOnClick(e)}
       >
         {children}
       </div>

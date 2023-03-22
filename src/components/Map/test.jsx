@@ -5,7 +5,7 @@ import Map from "./map";
 import Layers from "../Layers/layers";
 import TileLayer from "../Layers/TileLayer/tile-layer";
 import VectorLayer from "../Layers/VectorLayer/vector-layer";
-import { Circle as  Fill, Stroke, Style } from "ol/style";
+import { Circle as Fill, Stroke, Style } from "ol/style";
 import { osm, vector } from "../Source";
 import { fromLonLat, get } from "ol/proj";
 import MapControls from "../MapControls/map-controls";
@@ -14,8 +14,9 @@ import mapConfig from "../utils/map-config.json";
 import CustomControl from "../ui/CustomController/custom-controller";
 import { ControlStates, ControlTypes } from "../../constants/controls";
 import { setDelayForAnimation } from "../utils/functions";
-import VectorTileSource from 'ol/source/VectorTile.js';
-import MVT from 'ol/format/MVT.js';
+import VectorTileSource from "ol/source/VectorTile.js";
+import MVT from "ol/format/MVT.js";
+import Popup from "../ui/Popup/popup";
 
 let styles = {
   MultiPolygon: new Style({
@@ -27,22 +28,15 @@ let styles = {
       color: "#97BBB4",
     }),
   }),
-}
-
-const geojsonObject = mapConfig.geojsonObject;
-const geojsonObject2 = mapConfig.geojsonObject2;
+};
 
 const Test = () => {
-  const forestCheck = useSelector(
-    (state) => state.mapReducer.forestCheck
-  );
-  const agroCheck = useSelector(
-    (state) => state.mapReducer.agroCheck
-  );
+  const [popup, setPopup] = useState();
+  const forestCheck = useSelector((state) => state.mapReducer.forestCheck);
+  const agroCheck = useSelector((state) => state.mapReducer.agroCheck);
+
   const [center, setCenter] = useState([39.1238, 51.4018]);
   const [zoom, setZoom] = useState(9);
-  const [showLayer1, setShowLayer1] = useState(true);
-  const [showLayer2, setShowLayer2] = useState(true);
   const [controlState, setControlState] = useState(ControlStates.Default);
 
   async function getLocation() {
@@ -63,25 +57,29 @@ const Test = () => {
 
   return (
     <div className="test">
+
       <Map center={fromLonLat(center)} zoom={zoom}>
         <Layers>
           <TileLayer source={osm()} zIndex={0} />
           {agroCheck && (
             <VectorLayer
-              source={ new VectorTileSource({
-                format: new MVT(),
-                url: 'https://geoanalytics.ai/tiles/agro_vrn/{z}/{x}/{y}.pbf',
-              })}
+              source={
+                new VectorTileSource({
+                  format: new MVT(),
+                  url: "https://geoanalytics.ai/tiles/agro_vrn/{z}/{x}/{y}.pbf",
+                })
+              }
               style={styles.MultiPolygon}
-              
             />
           )}
           {forestCheck && (
-              <VectorLayer
-              source={ new VectorTileSource({
-                format: new MVT(),
-                url: 'https://geoanalytics.ai/tiles/forest_vrn/{z}/{x}/{y}.pbf',
-              })}
+            <VectorLayer
+              source={
+                new VectorTileSource({
+                  format: new MVT(),
+                  url: "https://geoanalytics.ai/tiles/forest_vrn/{z}/{x}/{y}.pbf",
+                })
+              }
               style={styles.MultiPolygon}
             />
           )}
@@ -97,7 +95,6 @@ const Test = () => {
             type={ControlTypes.ZoomOut}
             onClick={() => {
               setZoom(zoom - 1);
-              console.log("click");
             }}
           />
           <CustomControl
