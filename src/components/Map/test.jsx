@@ -9,14 +9,11 @@ import { Circle as Fill, Stroke, Style } from "ol/style";
 import { osm, vector } from "../Source";
 import { fromLonLat, get } from "ol/proj";
 import MapControls from "../MapControls/map-controls";
-// import FullScreenControl from "../MapControls/FullScreenControl/full-screen-control";
-import mapConfig from "../utils/map-config.json";
 import CustomControl from "../ui/CustomController/custom-controller";
 import { ControlStates, ControlTypes } from "../../constants/controls";
 import { setDelayForAnimation } from "../utils/functions";
 import VectorTileSource from "ol/source/VectorTile.js";
 import MVT from "ol/format/MVT.js";
-import Popup from "../ui/Popup/popup";
 
 let styles = {
   MultiPolygon: new Style({
@@ -31,7 +28,6 @@ let styles = {
 };
 
 const Test = () => {
-  const [popup, setPopup] = useState();
   const forestCheck = useSelector((state) => state.mapReducer.forestCheck);
   const agroCheck = useSelector((state) => state.mapReducer.agroCheck);
 
@@ -57,7 +53,6 @@ const Test = () => {
 
   return (
     <div className="test">
-
       <Map center={fromLonLat(center)} zoom={zoom}>
         <Layers>
           <TileLayer source={osm()} zIndex={0} />

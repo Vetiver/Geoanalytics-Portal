@@ -8,14 +8,24 @@ function Popup({
   forestSquare,
   moreButton = false,
   setPopup,
+  closePopup,
+  setPopupCloseBtn,
 }) {
+
   return (
-    <div className={styles.popupContainer} id="popup" ref={setPopup}>
+    <div
+      className={`${styles.popupContainer}`}
+      id="popup"
+      ref={setPopup}
+      onClick={(e) => {
+        closePopup(e);
+      }}
+    >
       {type === PopupType.Forest && (
         <div className={styles.squareContainer}>
           <div className={styles.titleAndCloseButtonContainer}>
             <h3 className={styles.title}>Forest</h3>{" "}
-            <button className={styles.closeButton} />
+            <button ref={setPopupCloseBtn} className={styles.closeButton} />
           </div>
           <div className={styles.line}></div>
           <p className={styles.subtitle}>Площадь объекта</p>
@@ -52,3 +62,4 @@ function Popup({
 }
 
 export default Popup;
+

@@ -1,4 +1,4 @@
-import { SET_MAP, SET_COORDINATES, RESET_COORDINATES, TOGGLE_FOREST, TOGGLE_AGRO } from "../actions/map";
+import { SET_MAP, TOGGLE_FOREST, TOGGLE_AGRO } from "../actions/map";
 
 const initialState = {
   map: null,
@@ -15,13 +15,6 @@ export const mapReducer = (state = initialState, action) => {
         map: action.payload,
       };
 
-    case SET_COORDINATES:
-      return {
-        ...state,
-        coordinates: action.payload,
-      };
-
-    case RESET_COORDINATES:
       return {
         ...state,
         coordinates: initialState.coordinates,
