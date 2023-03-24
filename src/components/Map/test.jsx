@@ -15,17 +15,19 @@ import { setDelayForAnimation } from "../utils/functions";
 import VectorTileSource from "ol/source/VectorTile.js";
 import MVT from "ol/format/MVT.js";
 
-let styles = {
-  MultiPolygon: new Style({
+let stylesForest =  new Style({
     stroke: new Stroke({
-      color: "#4F6B72",
+      color: '#32CD32',
       width: 1,
     }),
-    fill: new Fill({
-      color: "#97BBB4",
+  })
+let stylesAgro =  new Style({
+    stroke: new Stroke({
+      color: '#A1A1A1',
+      width: 1,
     }),
-  }),
-};
+  })
+
 
 const Test = () => {
   const forestCheck = useSelector((state) => state.mapReducer.forestCheck);
@@ -61,10 +63,12 @@ const Test = () => {
               source={
                 new VectorTileSource({
                   format: new MVT(),
-                  url: "https://geoanalytics.ai/tiles/agro_vrn/{z}/{x}/{y}.pbf",
+                  url: "https://geoanalytics.ai/tiles/agro_vrn/{z}/{x}/{y}",
                 })
+            
               }
-              style={styles.MultiPolygon}
+              style={stylesAgro}
+
             />
           )}
           {forestCheck && (
@@ -72,10 +76,10 @@ const Test = () => {
               source={
                 new VectorTileSource({
                   format: new MVT(),
-                  url: "https://geoanalytics.ai/tiles/forest_vrn/{z}/{x}/{y}.pbf",
+                  url: "https://geoanalytics.ai/tiles/forest_vrn/{z}/{x}/{y}",
                 })
               }
-              style={styles.MultiPolygon}
+              style={stylesForest}
             />
           )}
         </Layers>

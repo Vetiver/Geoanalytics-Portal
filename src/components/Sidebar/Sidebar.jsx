@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./Sidebar.module.css";
 import data from "../../images/logos/data.svg";
 import { arrowButton } from "../../images/logos/logos";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {TOGGLE_FOREST, TOGGLE_AGRO} from "../../services/actions/map"
 function Sidebar() {
   const dispatch = useDispatch();
