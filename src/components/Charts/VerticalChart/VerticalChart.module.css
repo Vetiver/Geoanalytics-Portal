@@ -1,0 +1,15 @@
+.chart {
+  height: 250px;
+  width: 500px;
+}
+
+.header {
+  margin: 0;
+  padding: 0 0 20px;
+  font: 700 24px/33px "Nunito";
+    color: #fff;
+}
+
+.close {
+  display: none;
+}
