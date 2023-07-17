@@ -81,8 +81,7 @@ const Map = ({ children, zoom, center }) => {
           <Popup
             setPopupCloseBtn={setPopupCloseBtn}
             setPopup={setPopup}
-            forestSquare="2443432"
-            moreButton={true}
+            forestSquare="12 345 кв.м."
             closePopup={closePopup}
           />
         }

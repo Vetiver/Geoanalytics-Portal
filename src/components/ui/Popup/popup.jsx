@@ -49,7 +49,7 @@ function Popup({
               <h3 className={styles.title}>Forest</h3>{" "}
               <button className={styles.closeButton} />
             </div>
-            <p className={styles.square}>{arableLandSquare}</p>
+            <p className={styles.square}>{forestSquare}</p>
           </div>
           <div className={styles.squareContainer}>
             <h3 className={styles.title}>Площадь леса</h3>

@@ -19,6 +19,7 @@ function VerticalChart({ close }) {
 
   const DarkBlue = (ChartJS.defaults.color = "#21648A");
 
+
   ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -63,15 +64,15 @@ function VerticalChart({ close }) {
         border: {
           color: DarkBlue,
         },
-     
+
         ticks: {
-             max: 20,
+          max: 20,
           suggestedMax: 4, // minimum will be 0, unless there is a lower value.
           // OR //
           beginAtZero: true, // minimum value will be 0.
           display: false,
-           steps: 3,
-                                stepValue: 1,
+          steps: 3,
+          stepValue: 1,
         },
 
         grid: {
@@ -84,7 +85,7 @@ function VerticalChart({ close }) {
         border: {
           color: DarkBlue,
         },
-        
+
         grid: {
           display: false,
           gridLines: {
@@ -135,6 +136,9 @@ function VerticalChart({ close }) {
       },
 
       tooltip: {
+        usePointStyle: true,
+        boxPadding: 5,
+        borderColor: "transparent",
         callbacks: {
           label: function (context) {
             console.log(context);

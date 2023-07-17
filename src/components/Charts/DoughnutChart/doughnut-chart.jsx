@@ -110,18 +110,9 @@ function DoughnutChart({ hidden }) {
     },
     responsive: true,
     radiusBackground: {
-      color: "#000", // Set your color per instance if you like
+      color: "#000", 
     },
-    elements: {
-      center: {
-        text: "Red is 2/3 the total numbers",
-        color: "#FF6384", // Default is #000000
-        fontStyle: "Arial", // Default is Arial
-        sidePadding: 20, // Default is 20 (as a percentage)
-        minFontSize: 20, // Default is 20 (in px), set to false and text will not wrap.
-        lineHeight: 25, // Default is 25 (in px), used for when text wraps
-      },
-    },
+   
     plugins: {
       legend: {
         position: "bottom",
@@ -141,7 +132,6 @@ function DoughnutChart({ hidden }) {
             return chart.data.labels.map(
               (label, index) =>
                 true && {
-                  // "transparent" // chart.data.datasets[0].backgroundColor[index] ===
                   text: label,
                   strokeStyle: "transparent",
                   fillStyle: chart.data.datasets[index].backgroundColor[0],
@@ -163,41 +153,7 @@ function DoughnutChart({ hidden }) {
         },
       },
     },
-    // legend: {
-    //   display: true,
-    // },
-    // legend: {
-    //   position: "right",
-    //   display: true,
-    //   labels: {
-    //     generateLabels: (chart) => {
-    //       console.log(chart)
-    //       let visibility = [];
-    //       for (let i = 0; i < chart.data.labels.length; i++) {
-    //         if (chart.getDataVisibility(i) === true) {
-    //           visibility.push(false);
-    //         } else visibility.push(true);
-    //       }
-    //       return chart.data.labels.map((label, index) => ({
-    //         text: label,
-    //         strokeStyle: "transparent",
-    //         fillStyle: chart.data.datasets[0].backgroundColor[index],
-    //         fontColor: "#fff",
-    //         hidden: visibility[index],
-    //       }));
-    //     },
 
-    // boxWidth: 8,
-    // boxHeight: 8,
-    // color: "#fff",
-    // font: {
-    //   family: "Nunito",
-    //   size: 16,
-    //   weight: 300,
-    //   lineHeight: "22px",
-    // },
-    //   },
-    // },
     title: {
       display: false,
     },
@@ -207,20 +163,9 @@ function DoughnutChart({ hidden }) {
     },
     ChartDataLabels,
     datalabels: {
-      // // display: false,
-      // color: "black",
-      // font: {
-      //   size: 20,
-      //   weight: "bold",
-      // },
+ 
       labels: [
-        {
-          text: "Due ≤ 60 Days",
-          font: {
-            size: "25",
-          },
-          color: "#fff",
-        },
+
       ],
       formatter: function (value, context) {
         if (value === 0) return "";
@@ -240,32 +185,11 @@ function DoughnutChart({ hidden }) {
             },
           ],
         },
-        // callback: {
-        //   label: function (tooltipItem, data) {
-        //     console.log(tooltipItem.datasetIndex);
-        //     var dataset = data.datasets[tooltipItem.datasetIndex];
-        //     var index = tooltipItem.index;
-        //     return dataset.labels[index] + ": " + dataset.data[index];
-        //   },
-        // },
+
       },
     },
   };
 
-  // label: function (context) {
-  //         let label = context.dataset.label || "";
-  //         console.log(context);
-  //         if (label) {
-  //           label += ": ";
-  //         }
-  //         if (context.parsed.y !== null) {
-  //           label += new Intl.NumberFormat("en-US", {
-  //             style: "currency",
-  //             currency: "USD",
-  //           }).format(context.parsed.y);
-  //         }
-  //         return label;
-  //       },
 
   const isComponentHidden = classNames({
     [styles.hidden]: !hidden,
@@ -277,7 +201,7 @@ function DoughnutChart({ hidden }) {
       const { ctx, data } = chart;
 
       ctx.save();
-      ctx.font = "700 25px Nunito";
+      ctx.font = "bolder 30px Arial";
       ctx.fillStyle = "#fff";
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
